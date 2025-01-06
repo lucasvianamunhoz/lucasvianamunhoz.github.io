@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>CV - Lucas Viana Munhoz</title>
-  <!-- Fonte de exemplo (Google Fonts) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     /* RESET E FONTE */
     * {
@@ -19,7 +20,7 @@
     }
 
     body {
-      background: #f3f6fa; /* cor de fundo suave */
+      background: #f3f6fa; /* cor de fundo suave para TELA */
       color: #333;
       line-height: 1.6;
     }
@@ -48,7 +49,6 @@
       margin-bottom: 40px;
       text-align: center;
     }
-
     .profile-header h1 {
       font-size: 1.8rem;
       margin-bottom: 8px;
@@ -56,7 +56,6 @@
       letter-spacing: 1px;
       font-weight: 700;
     }
-
     .profile-header p {
       font-size: 0.9rem;
       opacity: 0.8;
@@ -66,7 +65,6 @@
     .sidebar-section {
       margin-bottom: 30px;
     }
-
     .sidebar-section h2 {
       font-size: 1.2rem;
       margin-bottom: 10px;
@@ -76,7 +74,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-
     .sidebar-section p,
     .sidebar-section li,
     .sidebar-section a {
@@ -91,7 +88,6 @@
     .sidebar-section a:hover {
       text-decoration: underline;
     }
-
     .sidebar-section ul {
       list-style-type: disc;
       margin-left: 20px;
@@ -101,7 +97,7 @@
       margin-bottom: 5px;
     }
 
-    /* BOTÃO/SELECT DE IDIOMA NO RODAPÉ DA SIDEBAR */
+    /* SELECTOR DE IDIOMA NA SIDEBAR */
     .lang-select {
       margin-top: 20px;
       text-align: center;
@@ -125,7 +121,7 @@
       overflow-y: auto; /* scroll se precisar */
     }
 
-    /* BOTÃO DE DOWNLOAD PDF (SIMPLES) */
+    /* BOTÃO DE DOWNLOAD PDF */
     .download-section {
       text-align: right;
       margin-bottom: 20px;
@@ -147,7 +143,6 @@
     .main-section {
       margin-bottom: 40px;
     }
-
     .main-section h2 {
       font-size: 1.5rem;
       font-weight: 600;
@@ -164,13 +159,24 @@
     .summary p {
       margin-top: 10px;
       line-height: 1.7;
+      text-align: justify;
     }
 
-    /* EXPERIÊNCIA LISTADA EM CARDS SIMPLES */
+    /* EXPERIÊNCIA LISTADA EM CARDS */
     .experience-card {
       margin-bottom: 20px;
-      border-left: 4px solid #2b3a67;
-      padding-left: 15px;
+      position: relative;     /* Para posicionar o pseudo-elemento */
+      padding-left: 30px;     /* Espaço para o texto não ficar em cima da linha */
+      page-break-inside: avoid; /* Evitar quebra no meio de um card */
+    }
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: 10px;             /* Distância da borda esquerda */
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #2b3a67; /* Cor da linha */
     }
     .experience-card h3 {
       font-size: 1.1rem;
@@ -198,7 +204,7 @@
       margin-top: 10px;
     }
 
-    /* RODAPÉ GERAL (FORA DA SIDEBAR) */
+    /* RODAPÉ GERAL */
     .footer {
       margin-top: 40px;
       font-size: 0.8rem;
@@ -210,8 +216,26 @@
       line-height: 1.4;
     }
 
-    /* RESPONSIVO */
-    @media (max-width: 900px) {
+    /* ========== CONTATO ESPECIAL (VISÍVEL SÓ NO PDF) ========== */
+    .contact-summary-print {
+      display: none; /* esconde na tela normal */
+      margin-bottom: 20px;
+      padding: 20px;
+      border-bottom: 2px solid #000; /* apenas para destaque */
+    }
+    .contact-summary-print h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .contact-summary-print p {
+      margin: 5px 0;
+    }
+
+    /* RESPONSIVIDADE APENAS EM TELA (NAO AFETA IMPRESSÃO) */
+    @media screen and (max-width: 900px) {
       .container {
         flex-direction: column;
       }
@@ -227,22 +251,62 @@
         text-align: left;
         margin-bottom: 0;
       }
-      .sidebar-section {
-        display: none; /* esconde, se quiser menu hamburguer etc. */
-      }
-      .lang-select {
-        display: none; /* ou adequar responsivo */
-      }
       .main-content {
         padding: 20px;
+      }
+    }
+
+    /* ESTILOS PARA IMPRESSÃO -> layout 1 col, sem sidebar, exibe contato especial etc. */
+    @media print {
+      @page {
+        margin: 20mm; /* margens do PDF */
+      }
+      /* Trocar fundo para branco e cor do texto para preto */
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact; /* força uso das cores */
+        print-color-adjust: exact;
+      }
+      /* Esconder barra lateral */
+      .sidebar {
+        display: none !important;
+      }
+      /* Deixa o container em modo bloco 100% */
+      .container {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        min-height: auto !important;
+      }
+      /* A main-content vira a largura total */
+      .main-content {
+        width: 100% !important;
+        background: #fff !important;
+        padding: 0 20px !important;
+      }
+      /* Ajustar títulos, cores, etc. */
+      .main-section h2 {
+        color: #000 !important;
+        border-color: #000 !important;
+      }
+      .experience-card::before {
+        background-color: #000 !important;
+      }
+      /* Botão download some */
+      .download-section {
+        display: none !important;
+      }
+      /* Agora o bloco de contato é exibido somente no PDF */
+      .contact-summary-print {
+        display: block !important;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-
-    <!-- BARRA LATERAL ESQUERDA -->
+    <!-- SIDEBAR ESQUERDA -->
     <aside class="sidebar">
       <!-- Cabeçalho (nome e localização) -->
       <div class="profile-header">
@@ -288,10 +352,17 @@
 
     <!-- CONTEÚDO PRINCIPAL DIREITA -->
     <main class="main-content">
-
-      <!-- Botão de Download PDF -->
+      <!-- Botão Download PDF -->
       <section class="download-section">
         <button onclick="window.print()">Download PDF</button>
+      </section>
+
+      <!-- Bloco de contato só no PDF -->
+      <section class="contact-summary-print">
+        <h1>Lucas Viana Munhoz</h1>
+        <p><strong>Location:</strong> <span id="text-location-print">São Paulo, Brazil</span></p>
+        <p><strong id="text-phoneLabel-print">Phone/WhatsApp:</strong> +55 (11) 98898-2717</p>
+        <p><strong id="text-emailLabel-print">Email:</strong> lucas100390@gmail.com</p>
       </section>
 
       <!-- Resumo Profissional -->
@@ -463,7 +534,6 @@
           <div class="experience-meta" id="text-crkDataRange">
             Project Analyst Trainee | 01/2011 - 08/2013 | São Paulo, Brazil
           </div>
-
           <p>
             <strong id="text-crkPosition">Cargo Inicial: Trainee de Analista de Projetos</strong>
           </p>
@@ -473,30 +543,23 @@
           <p style="margin-top:10px; font-weight: 600;" id="text-crkExpTitle">
             EXPERIÊNCIA ADQUIRIDA:
           </p>
+          <!-- Agora, cada item é um <li> único e totaliza 15. -->
           <ul id="text-crkResponsibilities">
             <li>Área de atuação: Gestão de Projetos:</li>
-            <ul style="list-style-type: circle; margin-left:30px;">
-              <li>Verificando Status Report da implantação dos sistemas.</li>
-              <li>Elaboração de atas de reunião.</li>
-              <li>Atualização de cronogramas.</li>
-              <li>Conhecimentos nas fases de gerenciamento de projetos (Iniciação, Planejamento, Execução e Encerramento).</li>
-            </ul>
-            <br/>
+            <li>Verificando Status Report da implantação dos sistemas.</li>
+            <li>Elaboração de atas de reunião.</li>
+            <li>Atualização de cronogramas.</li>
+            <li>Conhecimentos nas fases de gerenciamento de projetos (Iniciação, Planejamento, Execução e Encerramento).</li>
             <li>Área de atuação: Análise Funcional:</li>
-            <ul style="list-style-type: circle; margin-left:30px;">
-              <li>Elaboração de Caso de Uso através das solicitações do cliente.</li>
-              <li>Elaboração da Evidência de Teste.</li>
-              <li>Treinamento da CPA-10 – Certificação de Investimentos Bancários.</li>
-            </ul>
-            <br/>
+            <li>Elaboração de Caso de Uso através das solicitações do cliente.</li>
+            <li>Elaboração da Evidência de Teste.</li>
+            <li>Treinamento da CPA-10 – Certificação de Investimentos Bancários.</li>
             <li>Área de atuação: Desenvolvimento:</li>
-            <ul style="list-style-type: circle; margin-left:30px;">
-              <li>Participei do desenvolvimento de sistemas voltados para o mercado financeiro, em C# e ASP.NET.</li>
-              <li>Conversão de sistema integralmente de VB6 para ASP.NET.</li>
-              <li>Elaboração de caso de teste, baseado nos requisitos funcionais.</li>
-              <li>Testes de software baseado em caso de testes.</li>
-              <li>Desenvolvimento e correção de procedures em SQL Server.</li>
-            </ul>
+            <li>Participei do desenvolvimento de sistemas voltados para o mercado financeiro, em C# e ASP.NET.</li>
+            <li>Conversão de sistema integralmente de VB6 para ASP.NET.</li>
+            <li>Elaboração de caso de teste, baseado nos requisitos funcionais.</li>
+            <li>Testes de software baseado em caso de testes.</li>
+            <li>Desenvolvimento e correção de procedures em SQL Server.</li>
           </ul>
         </div>
       </section>
@@ -519,7 +582,7 @@
         </ul>
       </section>
 
-      <!-- RODAPÉ GERAL (APENAS UMA VEZ) -->
+      <!-- RODAPÉ GERAL -->
       <div class="footer">
         <p id="text-footer">© 2025 - CV of Lucas Viana Munhoz | Updated version for European opportunities</p>
       </div>
@@ -533,7 +596,11 @@
       en: {
         // Localização
         "text-location": "São Paulo, Brazil",
-        
+        // Para o bloco de contato do PDF
+        "text-location-print": "São Paulo, Brazil",
+        "text-phoneLabel-print": "Phone/WhatsApp:",
+        "text-emailLabel-print": "Email:",
+
         // Contato e labels básicos
         "text-contactTitle": "Contact",
         "text-phoneLabel": "Phone/WhatsApp:",
@@ -651,6 +718,10 @@
       pt: {
         // Localização
         "text-location": "São Paulo, Brasil",
+        // Para o bloco de contato do PDF
+        "text-location-print": "São Paulo, Brasil",
+        "text-phoneLabel-print": "Telefone/WhatsApp:",
+        "text-emailLabel-print": "Email:",
 
         // Contato e labels básicos
         "text-contactTitle": "Contato",
@@ -746,7 +817,7 @@
         "text-nextt2": "Desenvolveu sistema de controle de demandas em ASP.NET Web Forms.",
 
         // CRK
-        "text-crkDataRange": "Trainee de Analista de Projetos | 10/01/2011 - 01/08/2013 | São Paulo, Brasil",
+        "text-crkDataRange": "Trainee de Analista de Projetos | 01/2011 - 08/2013 | São Paulo, Brasil",
         "text-crkPosition": "Cargo Inicial: Trainee de Analista de Projetos",
         "text-crkTechStack": "Tecnologias: ASP.NET Web Forms, Windows Forms",
         "text-crkExpTitle": "EXPERIÊNCIA ADQUIRIDA:",
@@ -768,9 +839,9 @@
       }
     };
 
-    // Função para trocar texto baseado no valor do select
+    // Função para trocar texto (inglês/português) conforme selecionado
     function switchLanguage(lang) {
-      // 1) Trocar conteúdo para todos os IDs mapeados em translations[lang]
+      // 1) Trocar conteúdo para todos os IDs mapeados
       for (const key in translations[lang]) {
         const element = document.getElementById(key);
         if (element) {
@@ -778,26 +849,38 @@
         }
       }
 
-      // 2) Listas específicas da CRK (crk1..crk15)
+      // 2) Atualizar listas específicas da CRK (crk1..crk15)
       const crkItems = [
         "crk1","crk2","crk3","crk4","crk5","crk6","crk7","crk8","crk9","crk10",
         "crk11","crk12","crk13","crk14","crk15"
       ];
       const crkUl = document.getElementById("text-crkResponsibilities");
       if (crkUl) {
-        // pega cada <li> ou sub-<li> na ordem exata
-        const liElements = crkUl.querySelectorAll("li, ul>li");
-        let index = 0;
-        liElements.forEach((li) => {
+        // Agora, cada <li> corresponde a um item da CRK
+        const liElements = crkUl.querySelectorAll("li");
+        liElements.forEach((li, index) => {
           if (index < crkItems.length) {
             li.textContent = translations[lang][crkItems[index]];
           }
-          index++;
         });
+      }
+
+      // 3) Também atualizamos as informações duplicadas no bloco de contato do PDF
+      const locationPrint = document.getElementById("text-location-print");
+      const phoneLabelPrint = document.getElementById("text-phoneLabel-print");
+      const emailLabelPrint = document.getElementById("text-emailLabel-print");
+      if (locationPrint && translations[lang]["text-location-print"]) {
+        locationPrint.textContent = translations[lang]["text-location-print"];
+      }
+      if (phoneLabelPrint && translations[lang]["text-phoneLabel-print"]) {
+        phoneLabelPrint.textContent = translations[lang]["text-phoneLabel-print"];
+      }
+      if (emailLabelPrint && translations[lang]["text-emailLabel-print"]) {
+        emailLabelPrint.textContent = translations[lang]["text-emailLabel-print"];
       }
     }
 
-    // Listener para mudança de idioma
+    // Ao mudar a seleção do combo "Language"
     document.getElementById("langSwitcher").addEventListener("change", function () {
       switchLanguage(this.value);
     });
