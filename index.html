@@ -1,532 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Lucas Viana Munhoz - Portfolio/Resume/CV</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio and Resume of Lucas Viana Munhoz">
-    <meta name="author" content="Lucas Viana Munhoz">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <script defer src="assets/plugins/fontawesome/js/all.js"></script>
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+  <meta charset="UTF-8" />
+  <title>CV - Lucas Viana Munhoz</title>
+  <!-- Fonte de exemplo (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* RESET E FONTE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f3f6fa; /* cor de fundo suave */
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* CONTAINER GERAL */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 100vh; /* ocupa altura total */
+    }
+
+    /* BARRA LATERAL (ESQUERDA) */
+    .sidebar {
+      width: 300px;
+      background: #2b3a67; /* cor principal */
+      color: #fff;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* NOME E LOCALIZAÇÃO NO TOPO DA SIDEBAR */
+    .profile-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .profile-header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .profile-header p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* CONTATO, HABILIDADES, ETC. NA SIDEBAR */
+    .sidebar-section {
+      margin-bottom: 30px;
+    }
+
+    .sidebar-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .sidebar-section p,
+    .sidebar-section li,
+    .sidebar-section a {
+      font-size: 0.9rem;
+      color: #fff; /* texto branco */
+      opacity: 0.9;
+    }
+    .sidebar-section a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .sidebar-section a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar-section ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .sidebar-section li {
+      margin-bottom: 5px;
+    }
+
+    /* RODAPÉ DENTRO DA SIDEBAR (IDIOMA) */
+    .sidebar-footer {
+      text-align: center;
+      margin-top: auto;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* BOTÃO/SELECT DE IDIOMA NO RODAPÉ */
+    .lang-select {
+      margin-top: 10px;
+    }
+    .lang-select label {
+      margin-right: 5px;
+    }
+    .lang-select select {
+      padding: 3px 5px;
+      border-radius: 4px;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    /* ÁREA PRINCIPAL (DIREITA) */
+    .main-content {
+      flex: 1;
+      background: #fff;
+      padding: 40px;
+      overflow-y: auto; /* scroll se precisar */
+    }
+
+    /* TÍTULOS DAS SESSÕES NO MAIN */
+    .main-section {
+      margin-bottom: 40px;
+    }
+
+    .main-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2b3a67;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #2b3a67;
+      padding-bottom: 5px;
+      margin-top: 10px;
+    }
+
+    /* SUMÁRIO PROFISSIONAL */
+    .summary p {
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    /* EXPERIÊNCIA LISTADA EM CARDS SIMPLES */
+    .experience-card {
+      margin-bottom: 20px;
+      border-left: 4px solid #2b3a67;
+      padding-left: 15px;
+    }
+    .experience-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2b3a67;
+      margin-bottom: 2px;
+    }
+    .experience-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .experience-card ul {
+      margin-left: 18px;
+      list-style-type: disc;
+      line-height: 1.7;
+    }
+
+    /* EDUCAÇÃO & IDIOMAS */
+    .education ul,
+    .languages ul {
+      list-style-type: square;
+      margin-left: 18px;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    /* RODAPÉ GERAL (FORA DA SIDEBAR) */
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+        height: auto;
+        padding: 20px;
+      }
+      .profile-header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+      .sidebar-section {
+        display: none; /* esconde se quiser num menu hamburguer, por ex. */
+      }
+      .sidebar-footer {
+        display: none; /* ou adequar responsivo */
+      }
+      .main-content {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="top-bar container-fluid">
-            <div class="actions">
-                <a class="btn d-none d-md-inline-block" href="mailto:lucas100390@gmail.com"><i class="fas fa-paper-plane" aria-hidden="true"></i> Hire Me</a>
-                <a class="btn" href="#"><i class="fas fa-download" aria-hidden="true"></i> Download My Resume</a>
-            </div>
-            <ul class="social list-inline">
-                <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-skype" aria-hidden="true"></i></a></li>
+  <div class="container">
+
+    <!-- BARRA LATERAL ESQUERDA -->
+    <aside class="sidebar">
+      <!-- Cabeçalho (nome e localização) -->
+      <div class="profile-header">
+        <h1>Lucas Viana Munhoz</h1>
+        <!-- Caso queira traduzir também o nome, basta criar um id="text-name" e colocar no translations -->
+        <p id="text-location">São Paulo, Brazil</p>
+      </div>
+
+      <!-- Seção de Contato -->
+      <div class="sidebar-section">
+        <h2 id="text-contactTitle">Contact</h2>
+        <p>
+          <strong id="text-phoneLabel">Phone/WhatsApp:</strong><br />
+          +55 (11) 98898-2717
+        </p>
+        <p>
+          <strong id="text-emailLabel">Email:</strong><br />
+          <a href="mailto:lucas100390@gmail.com">lucas100390@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Seção de Skills -->
+      <div class="sidebar-section skills">
+        <h2 id="text-keySkillsTitle">Key Skills</h2>
+        <ul id="text-keySkillsList">
+          <li id="text-skill1"><strong>.NET &amp; Frameworks:</strong> ASP.NET Core, MVC, Web Forms, WCF, C#</li>
+          <li id="text-skill2"><strong>Front-End:</strong> Angular, React, Vue.js, HTML5, CSS, JS, TS</li>
+          <li id="text-skill3"><strong>Data Persistence:</strong> Entity Framework, Dapper</li>
+          <li id="text-skill4"><strong>Databases:</strong> SQL Server, Oracle, MySQL, MongoDB</li>
+          <li id="text-skill5"><strong>DevOps &amp; Cloud:</strong> Azure, AWS, GCP, Git</li>
+          <li id="text-skill6"><strong>Methodologies:</strong> Scrum, Kanban</li>
+        </ul>
+      </div>
+
+      <!-- Footer da sidebar (idioma e info) -->
+      <div class="sidebar-footer">
+        <div class="lang-select">
+          <label for="langSwitcher">Language:</label>
+          <select id="langSwitcher">
+            <option value="en" selected>English</option>
+            <option value="pt">Português</option>
+          </select>
+        </div>
+        <p style="margin-top: 10px;">
+          © 2025 - <br />
+          <span id="text-footer"
+            >CV of Lucas Viana Munhoz | Updated version for European opportunities</span>
+        </p>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL DIREITA -->
+    <main class="main-content">
+
+      <!-- Resumo Profissional -->
+      <section class="main-section summary">
+        <h2 id="text-summaryTitle">Professional Summary</h2>
+        <p id="text-summaryContent">
+          Highly skilled .NET Senior Developer with extensive experience in designing,
+          developing, and maintaining web and desktop applications. Well-versed in
+          .NET Core, microservices, modern front-end frameworks (Angular, React, Vue.js),
+          and Agile methodologies (Scrum/Kanban). Skilled in cloud computing (Azure, AWS,
+          GCP) and relational/non-relational databases. Adept at mentoring junior developers
+          and managing complex project demands. Interested in opportunities to leverage
+          expertise in Europe.
+        </p>
+      </section>
+
+      <!-- EXPERIÊNCIA PROFISSIONAL -->
+      <section class="main-section">
+        <h2 id="text-experienceTitle">Professional Experience</h2>
+
+        <!-- ALLIANZ -->
+        <div class="experience-card">
+          <h3>Allianz</h3>
+          <div class="experience-meta" id="text-allianzMeta">
+            Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-allianz1">Maintained and enhanced ASP.NET Core systems.</li>
+            <li id="text-allianz2">Developed new systems using Angular (v12).</li>
+            <li id="text-allianz3">Created and optimized new Azure Functions.</li>
+            <li id="text-allianz4">Developed Logic Apps for workflow automation.</li>
+          </ul>
+        </div>
+
+        <!-- AVIVATECH -->
+        <div class="experience-card">
+          <h3>Avivatech</h3>
+          <div class="experience-meta" id="text-avivatechMeta">
+            Senior .NET Developer | 07/2020 - 09/2021 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-avivatech1">Maintained microservices architecture and front-end (Angular 9).</li>
+            <li id="text-avivatech2">Used Azure DevOps and pipelines for CI/CD.</li>
+            <li id="text-avivatech3">Participated in Scrum ceremonies and estimated new features.</li>
+            <li id="text-avivatech4">Developed new functionalities in the client’s systems.</li>
+          </ul>
+        </div>
+
+        <!-- FIAP -->
+        <div class="experience-card">
+          <h3>Fiap</h3>
+          <div class="experience-meta" id="text-fiapMeta">
+            Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-fiap1">Maintained legacy ASP.NET MVC, Web API, and WPF applications.</li>
+            <li id="text-fiap2">Developed new systems in ASP.NET MVC 5.</li>
+            <li id="text-fiap3">Mentored junior developers and managed project demands.</li>
+            <li id="text-fiap4">Gathered requirements for new applications.</li>
+          </ul>
+        </div>
+
+        <!-- PINBANK -->
+        <div class="experience-card">
+          <h3>Pinbank Brasil</h3>
+          <div class="experience-meta" id="text-pinbankMeta">
+            Senior .NET Developer | 02/2018 - 10/2019 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-pinbank1">Maintained ASP.NET Web Forms and WCF systems.</li>
+            <li id="text-pinbank2">Refactored legacy code into ASP.NET MVC 5.</li>
+            <li id="text-pinbank3">Developed new functionalities based on use cases.</li>
+          </ul>
+        </div>
+
+        <!-- NESS -->
+        <div class="experience-card">
+          <h3>Ness Processos de Tecnologia</h3>
+          <div class="experience-meta" id="text-nessMeta">
+            Mid-Level .NET Developer | 07/2017 - 08/2018 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-ness1">Developed systems for healthcare (Fidi, Alliar) and education (Enem, Encceja).</li>
+            <li id="text-ness2">Created services to optimize tasks.</li>
+            <li id="text-ness3">Worked with Angular 9, React Native, ASP.NET MVC, and DDD patterns.</li>
+          </ul>
+        </div>
+
+        <!-- KRAFT -->
+        <div class="experience-card">
+          <h3>Kraft Consulting</h3>
+          <div class="experience-meta" id="text-kraftMeta">
+            Senior .NET Developer | 11/2016 - 07/2017 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-kraft1">Developed Cinemark media management platform (ASP.NET MVC).</li>
+            <li id="text-kraft2">Gathered requirements with clients for new demands.</li>
+            <li id="text-kraft3">Created WCF services and relevant documentation.</li>
+          </ul>
+        </div>
+
+        <!-- ATACADO.COM -->
+        <div class="experience-card">
+          <h3>Atacado.com</h3>
+          <div class="experience-meta" id="text-atacadoMeta">
+            Senior .NET Developer | 04/2016 - 11/2016 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-atacado1">Maintained and enhanced e-commerce platform.</li>
+            <li id="text-atacado2">Integrated MOIP payment API.</li>
+            <li id="text-atacado3">Developed services for daily database updates.</li>
+          </ul>
+        </div>
+
+        <!-- CAPGEMINI -->
+        <div class="experience-card">
+          <h3>Capgemini Brasil (Fire Department)</h3>
+          <div class="experience-meta" id="text-capgeminiMeta">
+            Senior .NET Developer | 01/2016 - 04/2016 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-capgemini1">Developed custom software for the Fire Department using ASP.NET MVC.</li>
+            <li id="text-capgemini2">Worked with CSS, JavaScript, jQuery for front-end interfaces.</li>
+            <li id="text-capgemini3">Implemented Domain-Driven Design and use-case driven development.</li>
+          </ul>
+        </div>
+
+        <!-- SA365 -->
+        <div class="experience-card">
+          <h3>SA365</h3>
+          <div class="experience-meta" id="text-sa365Meta">
+            Development Intern | 08/2015 - 01/2016 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-sa3651">Created new websites using ASP.NET MVC.</li>
+            <li id="text-sa3652">Maintained sites built in PHP and Ruby.</li>
+            <li id="text-sa3653">Updated C# web content.</li>
+          </ul>
+        </div>
+
+        <!-- IMAGEM CIA -->
+        <div class="experience-card">
+          <h3>Imagem Companhia</h3>
+          <div class="experience-meta" id="text-imagemMeta">
+            Mid-Level Web Developer | 07/2014 - 07/2015 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-imagem1">Created newsletters and new websites using ASP.NET MVC.</li>
+            <li id="text-imagem2">Modified web content in C#.</li>
+            <li id="text-imagem3">Maintained legacy ASP code.</li>
+          </ul>
+        </div>
+
+        <!-- NEXTT INFORMÁTICA -->
+        <div class="experience-card">
+          <h3>Nextt Informática</h3>
+          <div class="experience-meta" id="text-nexttMeta">
+            Development Intern | 12/2013 - 07/2014 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-nextt1">Fixed bugs in existing systems.</li>
+            <li id="text-nextt2">Developed a demand-control system using ASP.NET Web Forms.</li>
+          </ul>
+        </div>
+
+        <!-- CRK INFORMÁTICA -->
+        <div class="experience-card">
+          <h3>CRK Informática</h3>
+          <div class="experience-meta" id="text-crkDataRange">
+            Project Analyst Trainee | 01/2011 - 08/2013 | São Paulo, Brazil
+          </div>
+
+          <!-- Cargo inicial -->
+          <p>
+            <strong id="text-crkPosition">Cargo Inicial: Trainee de Analista de Projetos</strong>
+          </p>
+
+          <!-- Tecnologias -->
+          <p id="text-crkTechStack">
+            <strong>Tecnologias:</strong> ASP.NET Web Forms, Windows Forms
+          </p>
+
+          <!-- Título da seção de experiência adquirida -->
+          <p style="margin-top:10px; font-weight: 600;" id="text-crkExpTitle">
+            EXPERIÊNCIA ADQUIRIDA:
+          </p>
+
+          <!-- Lista de atividades -->
+          <ul id="text-crkResponsibilities">
+            <li>Área de atuação: Gestão de Projetos:</li>
+            <ul style="list-style-type: circle; margin-left:30px;">
+              <li>Verificando Status Report da implantação dos sistemas.</li>
+              <li>Elaboração de atas de reunião.</li>
+              <li>Atualização de cronogramas.</li>
+              <li>Conhecimentos nas fases de gerenciamento de projetos (Iniciação, Planejamento, Execução e Encerramento).</li>
             </ul>
-        </div>
-        <div class="intro">
-            <div class="container text-center">
-                <img class="profile-image" src="assets/images/profile-image.png" alt="">
-                <h1 class="name">Lucas Viana Munhoz</h1>
-                <div class="title">.NET Senior Developer</div>
-                <div class="profile">
-                    <p>Experienced .NET Senior Developer with a strong background in system development and maintenance using ASP.NET Core, Angular, and various other technologies. Adept at developing new systems, mentoring junior developers, and managing project demands.</p>
-                </div>
-            </div>
-        </div>
-        <div class="contact-info">
-            <div class="container text-center">
-                <ul class="list-inline">
-                    <li class="email list-inline-item"><i class="fas fa-envelope mr-2"></i><a href="mailto:lucas100390@gmail.com">lucas100390@gmail.com</a></li>
-                    <li class="list-inline-item"><i class="fas fa-mobile-alt mr-2"></i><a href="#">5511988982717</a></li>
-                    <li class="website list-inline-item"><i class="fas fa-globe mr-2"></i><a href="#" target="_blank">portfoliosite.com</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="page-nav-space-holder" class="page-nav-space-holder d-none d-md-block">
-            <div id="page-nav-wrapper" class="page-nav-wrapper text-center">
-                <div class="container">
-                    <ul id="page-nav" class="nav page-nav list-inline">
-                        <li class="nav-item"><a class="scrollto nav-link" href="#experiences-section">Experiences</a></li>
-                        <li class="nav-item"><a class="scrollto nav-link" href="#education-section">Education</a></li>
-                        <li class="nav-item"><a class="scrollto nav-link" href="#skills-section">Skills</a></li>
-                        <li class="nav-item"><a class="scrollto nav-link" href="#testimonials-section">Testimonials</a></li>
-                        <li class="nav-item"><a class="scrollto nav-link" href="#portfolio-section">Portfolio</a></li>
-                        <li class="nav-item"><a class="scrollto nav-link" href="#contact-section">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="wrapper container">
-        <section id="experiences-section" class="experiences-section section">
-            <h2 class="section-title">Work Experiences</h2>
-            <div class="timeline">
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Allianz - Canada</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>Canada</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2021 - Present</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance systems in ASP.NET Core. Developing new systems using Angular 12, Azure Functions, and Logic Apps.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">AvivaTech</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>Canada</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2020 - 2021</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance systems in ASP.NET Core. Maintenance front end of system using Angular 8. Survey of requirements for new functionality of legacy system.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">University Fiap</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2019 - 2020</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance of legacy systems in ASP.NET MVC, Web API, and WPF. Development of new systems in ASP.NET MVC 5. Mentoring junior developers and managing project demands.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Pinbank Brazil</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2018 - 2019</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance of websites in ASP.NET Web Forms using C#. Refactoring internet banking from ASP.NET Web Forms to ASP.NET MVC.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Ness Processos de Tecnologia</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2017 - 2018</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance of website backend and C#. Developing new systems for government to help manage distribution tests for university applications.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Kraft Consulting</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2016 - 2017</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance of system to send media files to Cinemark Internacional. Developing system using ASP.NET MVC and UI using jQuery and CSS3.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Atacado.com</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2016</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Maintenance of website backend and C#. Integration using MOIP payment gateway. Developing job to update the database daily.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Capgemini Brazil (Allocated in Fire Fighter Department)</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">.NET Senior Developer</div>
-                        <div class="time">2016</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Developing new system to control the finished occurrences in the Fire Fighter Department. Using ASP.NET MVC for developing the system. Developing UI using jQuery and CSS3.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">SA365</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Trainee Asp.net Developer</div>
-                        <div class="time">2015 - 2016</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Development of new websites using ASP.NET MVC technology. Maintenance of website backend and C#. Maintenance of website backend and frontend in PHP and Ruby.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Imagem Companhia</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Web Developer Asp.net Mvc</div>
-                        <div class="time">2014 - 2015</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Newsletter Creation. Development of new websites using ASP.NET MVC technology. Maintenance of website content in C#.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">Nextt Informática</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Trainee Asp.net Developer</div>
-                        <div class="time">2013 - 2014</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Company system maintenance. Development of new company web system to control internal demands.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="work-place">
-                        <h3 class="place">CRK INFORMATICA LTDA</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt mr-1"></i>São Paulo, Brazil</div>
-                    </div>
-                    <div class="job-meta">
-                        <div class="title">Trainee</div>
-                        <div class="time">2011 - 2013</div>
-                    </div>
-                    <div class="job-desc">
-                        <p>Status Report Viewing/Deployment of systems. Preparation of meeting minutes. Updating schedules. Knowledge in project management phases (initiation, planning, execution, and closure of projects).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="education-section" class="education-section section">
-            <h2 class="section-title">Education</h2>
-            <div class="row">
-                <div class="item col-12 col-md-4">
-                    <div class="item-inner">
-                        <h3 class="degree">Analysis and System Development</h3>
-                        <div class="education-body">
-                            FIAP
-                        </div>
-                        <div class="time">Graduated</div>
-                        <div class="desc">
-                            Analysis and System Development
-                        </div>
-                    </div>
-                </div>
-                <div class="item col-12 col-md-4">
-                    <div class="item-inner">
-                        <h3 class="degree">Computer Technician</h3>
-                        <div class="education-body">
-                            SENAC ITAQUERA
-                        </div>
-                        <div class="time">Concluded in 2007</div>
-                        <div class="desc">
-                            Module 1 = Computer Maintenance <br>
-                            Module 2 = Website Development <br>
-                            Module 3 = Computer Network <br>
-                            Module 4 = System Development
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="skills-section" class="skills-section section text-center">
-            <h2 class="section-title">Professional Skills</h2>
-            <div class="top-skills">
-                <h3 class="subtitle">Top Skills</h3>
-                <div class="row">
-                    <div class="item col-12 col-md-4">
-                        <div class="item-inner">
-                            <div class="chart-easy-pie text-center">
-                                <div class="chart-theme-1 chart" data-percent="98"><span>98</span>%</div>
-                            </div>
-                            <h4 class="skill-name">.NET (C#, ASP.NET WEB FORMS, ASP.NET MVC, ASP.NET WEBAPI, WINDOWS FORMS)</h4>
-                            <div class="level">Expert</div>
-                        </div>
-                    </div>
-                    <div class="item col-12 col-md-4">
-                        <div class="item-inner">
-                            <div class="chart-easy-pie text-center">
-                                <div class="chart-theme-1 chart" data-percent="90"><span>90</span>%</div>
-                            </div>
-                            <h4 class="skill-name">JavaScript</h4>
-                            <div class="level">Expert</div>
-                        </div>
-                    </div>
-                    <div class="item col-12 col-md-4">
-                        <div class="item-inner">
-                            <div class="chart-easy-pie text-center">
-                                <div class="chart-theme-1 chart" data-percent="85"><span>85</span>%</div>
-                            </div>
-                            <h4 class="skill-name">Angular</h4>
-                            <div class="level">Advanced</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="other-skills">
-                <h3 class="subtitle">Other Skills</h3>
-                <div class="misc-skills">
-                    <span class="skill-tag">Swift</span>
-                    <span class="skill-tag">Objective C</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Ruby</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">SASS</span>
-                    <span class="skill-tag">LESS</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">SQL Server</span>
-                    <span class="skill-tag">Mongo DB</span>
-                    <span class="skill-tag">Oracle</span>
-                </div>
-            </div>
-        </section>
-        <section id="testimonials-section" class="testimonials-section section">
-            <h2 class="section-title">Testimonials</h2>
-            <div id="testimonials-carousel" class="testimonials-carousel carousel slide" data-bs-interval="8000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="item carousel-item active">
-                        <blockquote class="quote">
-                            <p>
-                                <span class="icon-holder"><i class="fas fa-quote-left"></i></span>
-                                Lucas is an excellent software engineer and he is passionate about what he does. His expertise in .NET development is remarkable.
-                            </p>
-                        </blockquote>
-                        <div class="source">
-                            <div class="name">Rob Olson</div>
-                            <div class="position">Product Manager, Allianz</div>
-                        </div>
-                    </div>
-                    <div class="item carousel-item">
-                        <blockquote class="quote">
-                            <p>
-                                <span class="icon-holder"><i class="fas fa-quote-left"></i></span>
-                                Lucas has a keen eye for detail and is exceptionally good at maintaining and developing systems. He is a valuable asset to any team.
-                            </p>
-                        </blockquote>
-                        <div class="source">
-                            <div class="name">Christina Jensen</div>
-                            <div class="position">Senior Developer, AvivaTech</div>
-                        </div>
-                    </div>
-                    <div class="item carousel-item">
-                        <blockquote class="quote">
-                            <p>
-                                <span class="icon-holder"><i class="fas fa-quote-left"></i></span>
-                                Lucas is a dedicated and hardworking developer. His skills in ASP.NET and Angular have been invaluable to our projects.
-                            </p>
-                        </blockquote>
-                        <div class="source">
-                            <div class="name">Austin Ward</div>
-                            <div class="position">CEO, Pinbank Brazil</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio-section" class="portfolio-section section">
-            <h2 class="section-title">Portfolio</h2>
-            <ul id="filters" class="filters clearfix">
-                <li class="type active" data-filter="*">All</li>
-                <li class="type" data-filter=".backend">Back-end</li>
-                <li class="type" data-filter=".frontend">Front-end</li>
+            <br/>
+            <li>Área de atuação: Análise Funcional:</li>
+            <ul style="list-style-type: circle; margin-left:30px;">
+              <li>Elaboração de Caso de Uso através das solicitações do cliente.</li>
+              <li>Elaboração da Evidência de Teste.</li>
+              <li>Treinamento da CPA-10 – Certificação de Investimentos Bancários.</li>
             </ul>
-            <div class="items-wrapper isotope row">
-                <div class="item frontend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-1.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">AngularJS </div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item backend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-2.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">Django</div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item backend frontend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-3.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">Django/JavaScript</div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item frontend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-4.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">ReactJS</div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item backend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-5.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">Python</div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item backend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-6.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">JavaScript</div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item frontend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-7.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">HTML/AngularJS </div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-                <div class="item frontend backend col-lg-3 col-6">
-                    <div class="item-inner">
-                        <figure class="figure">
-                            <img class="img-fluid" src="assets/images/portfolio/portfolio-8.jpg" alt="" />
-                        </figure>
-                        <div class="content text-start">
-                            <h3 class="sub-title"><a href="#">Project Lorem Ipsum</a></h3>
-                            <div class="meta">Python/AngularJS</div>
-                            <div class="action"><a href="#">View on Github &rarr;</a></div>
-                        </div>
-                        <a class="link-mask" href="#"></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact-section" class="contact-section section">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="intro">
-                <img class="profile-image" src="assets/images/profile-image.png" alt="">
-                <div class="dialog">
-                    <p>I'm currently taking on freelance work. Experienced in app development with ReactJS, front-end development with AngularJS, back-end development with Django/Python, UI development, and UX prototyping.</p>
-                    <p>Drop me a line at <a href="mailto:lucas100390@gmail.com">lucas100390@gmail.com</a> or call me at <a href="tel:5511988982717">5511988982717</a></p>
-                    <ul class="social list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt" aria-hidden="true"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-skype" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-    <footer class="footer text-center">
-        <div class="container">
-            <small class="copyright">Template Copyright @ <a href="http://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
-        </div>
-    </footer>
-    <div id="config-panel" class="config-panel config-panel-hide d-none d-lg-block">
-        <div class="panel-inner">
-            <a id="config-trigger" class="config-trigger" href="#"><i class="fas fa-cog mx-auto"></i></a>
-            <h5 class="mb-3">Choose Color</h5>
-            <ul id="color-options" class="list-unstyled list-inline mb-0">
-                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" data-chart="#00BCD4" href="#"></a></li>
-                <li class="theme-2 list-inline-item"><a data-style="assets/css/theme-2.css" data-chart="#03A9F4" href="#"></a></li>
-                <li class="theme-3 list-inline-item"><a data-style="assets/css/theme-3.css" data-chart="#009688" href="#"></a></li>
-                <li class="theme-4 list-inline-item"><a data-style="assets/css/theme-4.css" data-chart="#4CAF50" href="#"></a></li>
-                <li class="theme-5 list-inline-item"><a data-style="assets/css/theme-5.css" data-chart="#8BC34A" href="#"></a></li>
-                <li class="theme-6 list-inline-item"><a data-style="assets/css/theme-6.css" data-chart="#C0CA33" href="#"></a></li>
-                <li class="theme-7 list-inline-item"><a data-style="assets/css/theme-7.css" data-chart="#FFC107" href="#"></a></li>
-                <li class="theme-8 list-inline-item"><a data-style="assets/css/theme-8.css" data-chart="#FF9800" href="#"></a></li>
-                <li class="theme-9 list-inline-item"><a data-style="assets/css/theme-9.css" data-chart="#FF5722" href="#"></a></li>
-                <li class="theme-10 list-inline-item"><a data-style="assets/css/theme-10.css" data-chart="#795548" href="#"></a></li>
-                <li class="theme-11 list-inline-item"><a data-style="assets/css/theme-11.css" data-chart="#607D8B" href="#"></a></li>
-                <li class="theme-12 list-inline-item"><a data-style="assets/css/theme-12.css" data-chart="#673AB7" href="#"></a></li>
-                <li class="theme-13 list-inline-item"><a data-style="assets/css/theme-13.css" data-chart="#3F51B5" href="#"></a></li>
-                <li class="theme-14 list-inline-item"><a data-style="assets/css/theme-14.css" data-chart="#2196F3" href="#"></a></li>
-                <li class="theme-15 list-inline-item"><a data-style="assets/css/theme-15.css" data-chart="#9C27B0" href="#"></a></li>
-                <li class="theme-16 list-inline-item"><a data-style="assets/css/theme-16.css" data-chart="#E91E63" href="#"></a></li>
+            <br/>
+            <li>Área de atuação: Desenvolvimento:</li>
+            <ul style="list-style-type: circle; margin-left:30px;">
+              <li>Participei do desenvolvimento de sistemas voltados para o mercado financeiro, em C# e ASP.NET.</li>
+              <li>Conversão de sistema integralmente de VB6 para ASP.NET.</li>
+              <li>Elaboração de caso de teste, baseado nos requisitos funcionais.</li>
+              <li>Testes de software baseado em caso de testes.</li>
+              <li>Desenvolvimento e correção de procedures em SQL Server.</li>
             </ul>
-            <a id="config-close" class="close" href="#"><i class="fas fa-times-circle"></i></a>
+          </ul>
         </div>
-    </div>
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/plugins/easy-pie-chart/dist/easypiechart.min.js"></script>
-    <script src="assets/plugins/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/plugins/isotope.pkgd.min.js"></script>
-    <script src="assets/plugins/smoothscroll.min.js"></script>
-    <script src="assets/plugins/vanilla-back-to-top.min.js"></script>
-    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/demo/style-switcher.js"></script>
+      </section>
+
+      <!-- EDUCAÇÃO -->
+      <section class="main-section education">
+        <h2 id="text-educationTitle">Education</h2>
+        <ul id="text-educationList">
+          <li><strong>Analysis &amp; Systems Development (Bachelor’s) – FIAP</strong> (Completed)</li>
+          <li><strong>Technical Course in IT – SENAC Itaquera</strong> (Completed)</li>
+        </ul>
+      </section>
+
+      <!-- IDIOMAS -->
+      <section class="main-section languages">
+        <h2 id="text-languagesTitle">Languages</h2>
+        <ul id="text-languagesList">
+          <li><strong>Portuguese:</strong> Native</li>
+          <li><strong>English:</strong> Reading (Advanced), Writing (Intermediate), Speaking (Intermediate)</li>
+        </ul>
+      </section>
+
+      <!-- RODAPÉ GERAL -->
+      <div class="footer">
+        <p>
+          © 2025 -
+          <span id="text-footer-clone"
+            >CV of Lucas Viana Munhoz | Updated version for European opportunities</span>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <!-- SCRIPT DE TRADUÇÃO SIMPLES -->
+  <script>
+    // Objeto com traduções EN e PT
+    const translations = {
+      en: {
+        // Localização
+        "text-location": "São Paulo, Brazil",
+        
+        // Contato e labels básicos
+        "text-contactTitle": "Contact",
+        "text-phoneLabel": "Phone/WhatsApp:",
+        "text-emailLabel": "Email:",
+        "text-summaryTitle": "Professional Summary",
+        "text-summaryContent":
+          "Highly skilled .NET Senior Developer with extensive experience in designing, "+
+          "developing, and maintaining web and desktop applications. Well-versed in "+
+          ".NET Core, microservices, modern front-end frameworks (Angular, React, Vue.js), "+
+          "and Agile methodologies (Scrum/Kanban). Skilled in cloud computing (Azure, AWS, "+
+          "GCP) and relational/non-relational databases. Adept at mentoring junior developers "+
+          "and managing complex project demands. Interested in opportunities to leverage "+
+          "expertise in Europe.",
+        "text-keySkillsTitle": "Key Skills",
+        "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, C#",
+        "text-skill2": "Front-End: Angular, React, Vue.js, HTML5, CSS, JS, TS",
+        "text-skill3": "Data Persistence: Entity Framework, Dapper",
+        "text-skill4": "Databases: SQL Server, Oracle, MySQL, MongoDB",
+        "text-skill5": "DevOps & Cloud: Azure, AWS, GCP, Git",
+        "text-skill6": "Methodologies: Scrum, Kanban",
+        "text-experienceTitle": "Professional Experience",
+        "text-educationTitle": "Education",
+        "text-languagesTitle": "Languages",
+        "text-footer": "© 2025 - CV of Lucas Viana Munhoz | Updated version for European opportunities",
+
+        // Allianz
+        "text-allianzMeta": "Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil",
+        "text-allianz1": "Maintained and enhanced ASP.NET Core systems.",
+        "text-allianz2": "Developed new systems using Angular (v12).",
+        "text-allianz3": "Created and optimized new Azure Functions.",
+        "text-allianz4": "Developed Logic Apps for workflow automation.",
+
+        // Avivatech
+        "text-avivatechMeta": "Senior .NET Developer | 07/2020 - 09/2021 | São Paulo, Brazil",
+        "text-avivatech1": "Maintained microservices architecture and front-end (Angular 9).",
+        "text-avivatech2": "Used Azure DevOps and pipelines for CI/CD.",
+        "text-avivatech3": "Participated in Scrum ceremonies and estimated new features.",
+        "text-avivatech4": "Developed new functionalities in the client’s systems.",
+
+        // Fiap
+        "text-fiapMeta": "Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil",
+        "text-fiap1": "Maintained legacy ASP.NET MVC, Web API, and WPF applications.",
+        "text-fiap2": "Developed new systems in ASP.NET MVC 5.",
+        "text-fiap3": "Mentored junior developers and managed project demands.",
+        "text-fiap4": "Gathered requirements for new applications.",
+
+        // Pinbank
+        "text-pinbankMeta": "Senior .NET Developer | 02/2018 - 10/2019 | São Paulo, Brazil",
+        "text-pinbank1": "Maintained ASP.NET Web Forms and WCF systems.",
+        "text-pinbank2": "Refactored legacy code into ASP.NET MVC 5.",
+        "text-pinbank3": "Developed new functionalities based on use cases.",
+
+        // Ness
+        "text-nessMeta": "Mid-Level .NET Developer | 07/2017 - 08/2018 | São Paulo, Brazil",
+        "text-ness1": "Developed systems for healthcare (Fidi, Alliar) and education (Enem, Encceja).",
+        "text-ness2": "Created services to optimize tasks.",
+        "text-ness3": "Worked with Angular 9, React Native, ASP.NET MVC, and DDD patterns.",
+
+        // Kraft
+        "text-kraftMeta": "Senior .NET Developer | 11/2016 - 07/2017 | São Paulo, Brazil",
+        "text-kraft1": "Developed Cinemark media management platform (ASP.NET MVC).",
+        "text-kraft2": "Gathered requirements with clients for new demands.",
+        "text-kraft3": "Created WCF services and relevant documentation.",
+
+        // Atacado
+        "text-atacadoMeta": "Senior .NET Developer | 04/2016 - 11/2016 | São Paulo, Brazil",
+        "text-atacado1": "Maintained and enhanced e-commerce platform.",
+        "text-atacado2": "Integrated MOIP payment API.",
+        "text-atacado3": "Developed services for daily database updates.",
+
+        // Capgemini
+        "text-capgeminiMeta": "Senior .NET Developer | 01/2016 - 04/2016 | São Paulo, Brazil",
+        "text-capgemini1": "Developed custom software for the Fire Department using ASP.NET MVC.",
+        "text-capgemini2": "Worked with CSS, JavaScript, jQuery for front-end interfaces.",
+        "text-capgemini3": "Implemented Domain-Driven Design and use-case driven development.",
+
+        // SA365
+        "text-sa365Meta": "Development Intern | 08/2015 - 01/2016 | São Paulo, Brazil",
+        "text-sa3651": "Created new websites using ASP.NET MVC.",
+        "text-sa3652": "Maintained sites built in PHP and Ruby.",
+        "text-sa3653": "Updated C# web content.",
+
+        // Imagem
+        "text-imagemMeta": "Mid-Level Web Developer | 07/2014 - 07/2015 | São Paulo, Brazil",
+        "text-imagem1": "Created newsletters and new websites using ASP.NET MVC.",
+        "text-imagem2": "Modified web content in C#.",
+        "text-imagem3": "Maintained legacy ASP code.",
+
+        // Nextt
+        "text-nexttMeta": "Development Intern | 12/2013 - 07/2014 | São Paulo, Brazil",
+        "text-nextt1": "Fixed bugs in existing systems.",
+        "text-nextt2": "Developed a demand-control system using ASP.NET Web Forms.",
+
+        // CRK
+        "text-crkDataRange": "Project Analyst Trainee | 01/2011 - 08/2013 | São Paulo, Brazil",
+        "text-crkPosition": "Initial Position: Project Analyst Trainee",
+        "text-crkTechStack": "Technologies: ASP.NET Web Forms, Windows Forms",
+        "text-crkExpTitle": "ACQUIRED EXPERIENCE:",
+        "crk1": "Area of expertise: Project Management:",
+        "crk2": "Checking the Implementation Status Report of the systems.",
+        "crk3": "Writing meeting minutes.",
+        "crk4": "Updating project schedules.",
+        "crk5": "Understanding the phases of project management (Initiation, Planning, Execution, Closure).",
+        "crk6": "Area of expertise: Functional Analysis:",
+        "crk7": "Creating Use Cases based on client requests.",
+        "crk8": "Writing Test Evidence documentation.",
+        "crk9": "Completed CPA-10 training – Banking Investments Certification.",
+        "crk10": "Area of expertise: Development:",
+        "crk11": "Participated in the development of financial market systems (C# and ASP.NET).",
+        "crk12": "Converted a system entirely from VB6 to ASP.NET.",
+        "crk13": "Created test cases based on functional requirements.",
+        "crk14": "Performed software testing based on test cases.",
+        "crk15": "Developed and fixed SQL Server procedures."
+      },
+      pt: {
+        // Localização
+        "text-location": "São Paulo, Brasil",
+
+        // Contato e labels básicos
+        "text-contactTitle": "Contato",
+        "text-phoneLabel": "Telefone/WhatsApp:",
+        "text-emailLabel": "Email:",
+        "text-summaryTitle": "Resumo Profissional",
+        "text-summaryContent":
+          "Desenvolvedor .NET Sênior altamente qualificado, com ampla experiência em "+
+          "projetar, desenvolver e manter aplicações web e desktop. Domínio em "+
+          ".NET Core, microsserviços e frameworks front-end modernos (Angular, React, Vue.js), "+
+          "além de metodologias ágeis (Scrum/Kanban). Experiência em computação em nuvem "+
+          "(Azure, AWS, GCP) e bancos de dados relacionais e não relacionais. Hábil em mentorar "+
+          "desenvolvedores juniores e gerenciar demandas de projetos complexos. Interessado em "+
+          "oportunidades para aplicar sua expertise na Europa.",
+        "text-keySkillsTitle": "Principais Competências",
+        "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, C#",
+        "text-skill2": "Front-End: Angular, React, Vue.js, HTML5, CSS, JS, TS",
+        "text-skill3": "Persistência de Dados: Entity Framework, Dapper",
+        "text-skill4": "Bancos de Dados: SQL Server, Oracle, MySQL, MongoDB",
+        "text-skill5": "DevOps & Nuvem: Azure, AWS, GCP, Git",
+        "text-skill6": "Metodologias: Scrum, Kanban",
+        "text-experienceTitle": "Experiência Profissional",
+        "text-educationTitle": "Formação",
+        "text-languagesTitle": "Idiomas",
+        "text-footer": "© 2025 - CV de Lucas Viana Munhoz | Versão atualizada para oportunidades na Europa",
+
+        // Allianz
+        "text-allianzMeta": "Desenvolvedor .NET Sênior | 07/2020 - 09/2024 | São Paulo, Brasil",
+        "text-allianz1": "Realizou manutenção e aprimoramentos em sistemas ASP.NET Core.",
+        "text-allianz2": "Desenvolveu novos sistemas utilizando Angular (v12).",
+        "text-allianz3": "Criou e otimizou novas Azure Functions.",
+        "text-allianz4": "Desenvolveu Logic Apps para automação de fluxos de trabalho.",
+
+        // Avivatech
+        "text-avivatechMeta": "Desenvolvedor .NET Sênior | 07/2020 - 09/2021 | São Paulo, Brasil",
+        "text-avivatech1": "Manteve arquitetura de microsserviços e front-end (Angular 9).",
+        "text-avivatech2": "Utilizou Azure DevOps e pipelines para CI/CD.",
+        "text-avivatech3": "Participou de cerimônias Scrum e estimou novas funcionalidades.",
+        "text-avivatech4": "Desenvolveu novas funcionalidades nos sistemas do cliente.",
+
+        // Fiap
+        "text-fiapMeta": "Desenvolvedor .NET Sênior | 10/2019 - 06/2020 | São Paulo, Brasil",
+        "text-fiap1": "Manteve aplicativos legados em ASP.NET MVC, Web API e WPF.",
+        "text-fiap2": "Desenvolveu novos sistemas em ASP.NET MVC 5.",
+        "text-fiap3": "Mentorou desenvolvedores juniores e gerenciou demandas de projeto.",
+        "text-fiap4": "Levantou requisitos para novas aplicações.",
+
+        // Pinbank
+        "text-pinbankMeta": "Desenvolvedor .NET Sênior | 02/2018 - 10/2019 | São Paulo, Brasil",
+        "text-pinbank1": "Manteve sistemas ASP.NET Web Forms e WCF.",
+        "text-pinbank2": "Refatorou código legado para ASP.NET MVC 5.",
+        "text-pinbank3": "Desenvolveu novas funcionalidades com base em casos de uso.",
+
+        // Ness
+        "text-nessMeta": "Desenvolvedor .NET Pleno | 07/2017 - 08/2018 | São Paulo, Brasil",
+        "text-ness1": "Desenvolveu sistemas para saúde (Fidi, Alliar) e educação (Enem, Encceja).",
+        "text-ness2": "Criou serviços para otimizar tarefas.",
+        "text-ness3": "Trabalhou com Angular 9, React Native, ASP.NET MVC e padrões DDD.",
+
+        // Kraft
+        "text-kraftMeta": "Desenvolvedor .NET Sênior | 11/2016 - 07/2017 | São Paulo, Brasil",
+        "text-kraft1": "Desenvolveu plataforma de gestão de mídias para Cinemark (ASP.NET MVC).",
+        "text-kraft2": "Alinhou requisitos com clientes para novas demandas.",
+        "text-kraft3": "Criou serviços WCF e documentação relevante.",
+
+        // Atacado
+        "text-atacadoMeta": "Desenvolvedor .NET Sênior | 04/2016 - 11/2016 | São Paulo, Brasil",
+        "text-atacado1": "Manteve e aprimorou plataforma de e-commerce.",
+        "text-atacado2": "Integração da API de pagamento MOIP.",
+        "text-atacado3": "Desenvolveu serviços para atualizações diárias de banco de dados.",
+
+        // Capgemini
+        "text-capgeminiMeta": "Desenvolvedor .NET Sênior | 01/2016 - 04/2016 | São Paulo, Brasil",
+        "text-capgemini1": "Desenvolveu software sob medida para o Corpo de Bombeiros em ASP.NET MVC.",
+        "text-capgemini2": "Trabalhou com CSS, JavaScript e jQuery no front-end.",
+        "text-capgemini3": "Implementou Design Orientado a Domínio e desenvolvimento guiado por casos de uso.",
+
+        // SA365
+        "text-sa365Meta": "Estagiário de Desenvolvimento | 08/2015 - 01/2016 | São Paulo, Brasil",
+        "text-sa3651": "Criou novos sites usando ASP.NET MVC.",
+        "text-sa3652": "Manteve sites em PHP e Ruby.",
+        "text-sa3653": "Atualizou conteúdo web em C#.",
+
+        // Imagem
+        "text-imagemMeta": "Desenvolvedor Web Pleno | 07/2014 - 07/2015 | São Paulo, Brasil",
+        "text-imagem1": "Criou newsletters e novos sites em ASP.NET MVC.",
+        "text-imagem2": "Alterou conteúdo web em C#.",
+        "text-imagem3": "Manteve código legado em ASP.",
+
+        // Nextt
+        "text-nexttMeta": "Estagiário de Desenvolvimento | 12/2013 - 07/2014 | São Paulo, Brasil",
+        "text-nextt1": "Corrigiu bugs em sistemas existentes.",
+        "text-nextt2": "Desenvolveu sistema de controle de demandas em ASP.NET Web Forms.",
+
+        // CRK
+        "text-crkDataRange": "Trainee de Analista de Projetos | 10/01/2011 - 01/08/2013 | São Paulo, Brasil",
+        "text-crkPosition": "Cargo Inicial: Trainee de Analista de Projetos",
+        "text-crkTechStack": "Tecnologias: ASP.NET Web Forms, Windows Forms",
+        "text-crkExpTitle": "EXPERIÊNCIA ADQUIRIDA:",
+        "crk1": "Área de atuação: Gestão de Projetos:",
+        "crk2": "Verificando Status Report da implantação dos sistemas.",
+        "crk3": "Elaboração de atas de reunião.",
+        "crk4": "Atualização de cronogramas.",
+        "crk5": "Conhecimentos nas fases de gerenciamento de projetos (Iniciação, Planejamento, Execução e Encerramento).",
+        "crk6": "Área de atuação: Análise Funcional:",
+        "crk7": "Elaboração de Caso de Uso através das solicitações do cliente.",
+        "crk8": "Elaboração da Evidência de Teste.",
+        "crk9": "Treinamento da CPA-10 – Certificação de Investimentos Bancários.",
+        "crk10": "Área de atuação: Desenvolvimento:",
+        "crk11": "Participei do desenvolvimento de sistemas voltados para o mercado financeiro, em C# e ASP.NET.",
+        "crk12": "Conversão de sistema integralmente de VB6 para ASP.NET.",
+        "crk13": "Elaboração de caso de teste, baseado nos requisitos funcionais.",
+        "crk14": "Testes de software baseado em caso de testes.",
+        "crk15": "Desenvolvimento e correção de procedures em SQL Server."
+      }
+    };
+
+    // Função para trocar texto baseado no valor do select
+    function switchLanguage(lang) {
+      // 1) Trocar conteúdo para todos os IDs mapeados em translations[lang]
+      for (const key in translations[lang]) {
+        const element = document.getElementById(key);
+        if (element) {
+          element.textContent = translations[lang][key];
+        }
+      }
+
+      // 2) Listas específicas da CRK (crk1..crk15)
+      const crkItems = [
+        "crk1","crk2","crk3","crk4","crk5","crk6","crk7","crk8","crk9","crk10",
+        "crk11","crk12","crk13","crk14","crk15"
+      ];
+      const crkUl = document.getElementById("text-crkResponsibilities");
+      if (crkUl) {
+        // pega cada <li> ou sub-<li> na ordem exata
+        const liElements = crkUl.querySelectorAll("li, ul>li");
+        let index = 0;
+        liElements.forEach((li) => {
+          if (index < crkItems.length) {
+            li.textContent = translations[lang][crkItems[index]];
+          }
+          index++;
+        });
+      }
+
+      // 3) Atualiza o footer "clone" (dentro do main)
+      document.getElementById("text-footer-clone").textContent = translations[lang]["text-footer"];
+    }
+
+    // Listener para mudança de idioma
+    document.getElementById("langSwitcher").addEventListener("change", function () {
+      switchLanguage(this.value);
+    });
+  </script>
 </body>
 </html>
