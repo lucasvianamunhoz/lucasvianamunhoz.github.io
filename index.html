@@ -40,7 +40,7 @@
       padding: 40px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: start;
     }
 
     /* NOME E LOCALIZAÇÃO NO TOPO DA SIDEBAR */
@@ -101,17 +101,10 @@
       margin-bottom: 5px;
     }
 
-    /* RODAPÉ DENTRO DA SIDEBAR (IDIOMA) */
-    .sidebar-footer {
-      text-align: center;
-      margin-top: auto;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* BOTÃO/SELECT DE IDIOMA NO RODAPÉ */
+    /* BOTÃO/SELECT DE IDIOMA NO RODAPÉ DA SIDEBAR */
     .lang-select {
-      margin-top: 10px;
+      margin-top: 20px;
+      text-align: center;
     }
     .lang-select label {
       margin-right: 5px;
@@ -130,6 +123,24 @@
       background: #fff;
       padding: 40px;
       overflow-y: auto; /* scroll se precisar */
+    }
+
+    /* BOTÃO DE DOWNLOAD PDF (SIMPLES) */
+    .download-section {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .download-section button {
+      background: #2b3a67;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .download-section button:hover {
+      background: #1e2b4a;
     }
 
     /* TÍTULOS DAS SESSÕES NO MAIN */
@@ -195,6 +206,9 @@
       color: #888;
       font-style: italic;
     }
+    .footer p {
+      line-height: 1.4;
+    }
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
@@ -214,9 +228,9 @@
         margin-bottom: 0;
       }
       .sidebar-section {
-        display: none; /* esconde se quiser num menu hamburguer, por ex. */
+        display: none; /* esconde, se quiser menu hamburguer etc. */
       }
-      .sidebar-footer {
+      .lang-select {
         display: none; /* ou adequar responsivo */
       }
       .main-content {
@@ -233,7 +247,6 @@
       <!-- Cabeçalho (nome e localização) -->
       <div class="profile-header">
         <h1>Lucas Viana Munhoz</h1>
-        <!-- Caso queira traduzir também o nome, basta criar um id="text-name" e colocar no translations -->
         <p id="text-location">São Paulo, Brazil</p>
       </div>
 
@@ -263,25 +276,23 @@
         </ul>
       </div>
 
-      <!-- Footer da sidebar (idioma e info) -->
-      <div class="sidebar-footer">
-        <div class="lang-select">
-          <label for="langSwitcher">Language:</label>
-          <select id="langSwitcher">
-            <option value="en" selected>English</option>
-            <option value="pt">Português</option>
-          </select>
-        </div>
-        <p style="margin-top: 10px;">
-          © 2025 - <br />
-          <span id="text-footer"
-            >CV of Lucas Viana Munhoz | Updated version for European opportunities</span>
-        </p>
+      <!-- Selector de Idioma -->
+      <div class="lang-select">
+        <label for="langSwitcher">Language:</label>
+        <select id="langSwitcher">
+          <option value="en" selected>English</option>
+          <option value="pt">Português</option>
+        </select>
       </div>
     </aside>
 
     <!-- CONTEÚDO PRINCIPAL DIREITA -->
     <main class="main-content">
+
+      <!-- Botão de Download PDF -->
+      <section class="download-section">
+        <button onclick="window.print()">Download PDF</button>
+      </section>
 
       <!-- Resumo Profissional -->
       <section class="main-section summary">
@@ -453,22 +464,15 @@
             Project Analyst Trainee | 01/2011 - 08/2013 | São Paulo, Brazil
           </div>
 
-          <!-- Cargo inicial -->
           <p>
             <strong id="text-crkPosition">Cargo Inicial: Trainee de Analista de Projetos</strong>
           </p>
-
-          <!-- Tecnologias -->
           <p id="text-crkTechStack">
             <strong>Tecnologias:</strong> ASP.NET Web Forms, Windows Forms
           </p>
-
-          <!-- Título da seção de experiência adquirida -->
           <p style="margin-top:10px; font-weight: 600;" id="text-crkExpTitle">
             EXPERIÊNCIA ADQUIRIDA:
           </p>
-
-          <!-- Lista de atividades -->
           <ul id="text-crkResponsibilities">
             <li>Área de atuação: Gestão de Projetos:</li>
             <ul style="list-style-type: circle; margin-left:30px;">
@@ -515,13 +519,9 @@
         </ul>
       </section>
 
-      <!-- RODAPÉ GERAL -->
+      <!-- RODAPÉ GERAL (APENAS UMA VEZ) -->
       <div class="footer">
-        <p>
-          © 2025 -
-          <span id="text-footer-clone"
-            >CV of Lucas Viana Munhoz | Updated version for European opportunities</span>
-        </p>
+        <p id="text-footer">© 2025 - CV of Lucas Viana Munhoz | Updated version for European opportunities</p>
       </div>
     </main>
   </div>
@@ -795,9 +795,6 @@
           index++;
         });
       }
-
-      // 3) Atualiza o footer "clone" (dentro do main)
-      document.getElementById("text-footer-clone").textContent = translations[lang]["text-footer"];
     }
 
     // Listener para mudança de idioma
