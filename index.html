@@ -314,12 +314,29 @@
       <div class="sidebar-section skills">
         <h2 id="text-keySkillsTitle">Key Skills</h2>
         <ul id="text-keySkillsList">
-          <li id="text-skill1"><strong>.NET &amp; Frameworks:</strong> ASP.NET Core, MVC, Web Forms, WCF, C#</li>
-          <li id="text-skill2"><strong>Front-End:</strong> Angular, React, Vue.js, HTML5, CSS, JS, TS</li>
-          <li id="text-skill3"><strong>Data Persistence:</strong> Entity Framework, Dapper</li>
-          <li id="text-skill4"><strong>Databases:</strong> SQL Server, Oracle, MySQL, MongoDB</li>
-          <li id="text-skill5"><strong>DevOps &amp; Cloud:</strong> Azure, AWS, GCP, Git</li>
-          <li id="text-skill6"><strong>Methodologies:</strong> Scrum, Kanban</li>
+          <!-- Incluí WPF junto ao .NET -->
+          <li id="text-skill1">
+            <strong>.NET &amp; Frameworks:</strong> ASP.NET Core, MVC, Web Forms, WCF, WPF, C#
+          </li>
+          <li id="text-skill2">
+            <strong>Front-End:</strong> Angular, React, Vue.js, HTML5, CSS, JS, TS
+          </li>
+          <li id="text-skill3">
+            <strong>Data Persistence:</strong> Entity Framework, Dapper
+          </li>
+          <li id="text-skill4">
+            <strong>Databases:</strong> SQL Server, Oracle, MySQL, MongoDB
+          </li>
+          <li id="text-skill5">
+            <strong>DevOps &amp; Cloud:</strong> Azure, AWS, GCP, Git
+          </li>
+          <li id="text-skill6">
+            <strong>Methodologies:</strong> Scrum, Kanban
+          </li>
+          <!-- Criei um novo bullet para Node.js -->
+          <li id="text-skill7">
+            <strong>Node.js:</strong> Express, REST APIs, Microservices
+          </li>
         </ul>
       </div>
 
@@ -357,8 +374,7 @@
           .NET Core, microservices, modern front-end frameworks (Angular, React, Vue.js),
           and Agile methodologies (Scrum/Kanban). Skilled in cloud computing (Azure, AWS,
           GCP) and relational/non-relational databases. Adept at mentoring junior developers
-          and managing complex project demands. Interested in opportunities to leverage
-          expertise in Europe.
+          and managing complex project demands.
         </p>
       </section>
 
@@ -368,17 +384,25 @@
 
         <!-- ALLIANZ (HTML base em inglês) -->
         <div class="experience-card">
-          <h3>Allianz</h3>
-          <div class="experience-meta" id="text-allianzMeta">
-            Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil
+            <h3>Allianz</h3>
+            <div class="experience-meta" id="text-allianzMeta">
+              Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil
+            </div>
+            <ul>
+              <li id="text-allianz1">
+                Maintained and enhanced ASP.NET Core systems, as well as <strong>WPF</strong> applications, implementing new functionalities and bug fixes.
+              </li>
+              <li id="text-allianz2">
+                Developed new systems using Angular (v12).
+              </li>
+              <li id="text-allianz3">
+                Migrated some .NET APIs to Node.js, focusing on performance and scalability.
+              </li>
+              <li id="text-allianz4">
+                Created and optimized new Azure Functions, and developed Logic Apps for workflow automation.
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li id="text-allianz1">Maintained and enhanced ASP.NET Core systems.</li>
-            <li id="text-allianz2">Developed new systems using Angular (v12).</li>
-            <li id="text-allianz3">Created and optimized new Azure Functions.</li>
-            <li id="text-allianz4">Developed Logic Apps for workflow automation.</li>
-          </ul>
-        </div>
 
         <!-- AVIVATECH -->
         <div class="experience-card">
@@ -396,17 +420,26 @@
 
         <!-- FIAP -->
         <div class="experience-card">
-          <h3>Fiap</h3>
-          <div class="experience-meta" id="text-fiapMeta">
-            Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil
+            <h3>Fiap</h3>
+            <div class="experience-meta" id="text-fiapMeta">
+              Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil
+            </div>
+            <ul>
+              <li id="text-fiap1">
+                Maintained legacy ASP.NET MVC, Web API, and <strong>WPF</strong> applications, 
+                focusing on refactoring, bug fixes, and UI updates in WPF.
+              </li>
+              <li id="text-fiap2">
+                Developed new systems in ASP.NET MVC 5.
+              </li>
+              <li id="text-fiap3">
+                Mentored junior developers and managed project demands.
+              </li>
+              <li id="text-fiap4">
+                Gathered requirements for new applications.
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li id="text-fiap1">Maintained legacy ASP.NET MVC, Web API, and WPF applications.</li>
-            <li id="text-fiap2">Developed new systems in ASP.NET MVC 5.</li>
-            <li id="text-fiap3">Mentored junior developers and managed project demands.</li>
-            <li id="text-fiap4">Gathered requirements for new applications.</li>
-          </ul>
-        </div>
 
         <!-- PINBANK -->
         <div class="experience-card">
@@ -425,38 +458,37 @@
 
         <!-- CRK INFORMÁTICA -->
         <div class="experience-card">
-          <h3>CRK Informática</h3>
-          <div class="experience-meta" id="text-crkDataRange">
-            Project Analyst Trainee | 10/01/2011 - 01/08/2013 | São Paulo, Brazil
+            <h3>CRK INFORMATICA LTDA</h3>
+            <div class="experience-meta" id="text-crkDataRange">
+               Trainee | Admission: 01/10/2011 - Termination: 08/01/2013 | São Paulo, Brazil
+            </div>
+            <p>
+              <strong id="text-crkPosition">Initial Position: Project Analyst Trainee</strong>
+            </p>
+            <p id="text-crkTechStack" >
+              <strong>Technologies:</strong> ASP.NET Web Forms, Windows Forms
+            </p>
+            <p style="margin-top:10px; font-weight:600;" id="text-crkExpTitle">
+              ACQUIRED EXPERIENCE:
+            </p>
+            <ul id="text-crkResponsibilities">
+              <li styles="font-weight:bolder;"><strong>Area of Expertise: Project Management:</strong></li>
+              <li>Monitoring the implementation Status Report of the systems.</li>
+              <li>Writing meeting minutes.</li>
+              <li>Updating project schedules.</li>
+              <li>Knowledge of project management phases (Initiation, Planning, Execution, and Closure).</li>
+              <li styles="font-weight:bolder;"><strong>Area of Expertise: Functional Analysis:</strong></li>
+              <li>Creating Use Cases based on client requests.</li>
+              <li>Writing Test Evidence documentation.</li>
+              <li>Completed CPA-10 training – Banking Investments Certification.</li>
+              <li styles="font-weight:bolder;"><strong>Area of Expertise: Development:</strong></li>
+              <li>Participated in the development of financial market systems using C# and ASP.NET.</li>
+              <li>Worked on converting a system entirely from VB6 to ASP.NET.</li>
+              <li>Creating test cases based on functional requirements.</li>
+              <li>Software testing based on test cases.</li>
+              <li>Developed and fixed SQL Server procedures.</li>
+            </ul>
           </div>
-          <p>
-            <strong id="text-crkPosition">Initial Position: Project Analyst Trainee</strong>
-          </p>
-          <p id="text-crkTechStack">
-            <strong>Technologies:</strong> ASP.NET Web Forms, Windows Forms
-          </p>
-          <p style="margin-top:10px; font-weight:600;" id="text-crkExpTitle">
-            ACQUIRED EXPERIENCE:
-          </p>
-          <!-- Cada <li> corresponde a crk1..crk15 (HTML base em inglês) -->
-          <ul id="text-crkResponsibilities">
-            <li>Area of expertise: Project Management:</li>
-            <li>Checking the Implementation Status Report of the systems.</li>
-            <li>Writing meeting minutes.</li>
-            <li>Updating project schedules.</li>
-            <li>Understanding the phases of project management (Initiation, Planning, Execution, Closure).</li>
-            <li>Area of expertise: Functional Analysis:</li>
-            <li>Creating Use Cases based on client requests.</li>
-            <li>Writing Test Evidence documentation.</li>
-            <li>Completed CPA-10 training – Banking Investments Certification.</li>
-            <li>Area of expertise: Development:</li>
-            <li>Participated in the development of financial market systems in C# and ASP.NET.</li>
-            <li>Converted a system entirely from VB6 to ASP.NET.</li>
-            <li>Created test cases based on functional requirements.</li>
-            <li>Performed software testing based on test cases.</li>
-            <li>Developed and fixed SQL Server procedures.</li>
-          </ul>
-        </div>
       </section>
 
       <!-- EDUCAÇÃO (EM INGLÊS) -->
@@ -473,13 +505,13 @@
         <h2 id="text-languagesTitle">Languages</h2>
         <ul id="text-languagesList">
           <li><strong>Portuguese:</strong> Native</li>
-          <li><strong>English:</strong> Reading (Advanced), Writing (Intermediate), Speaking (Intermediate)</li>
+          <li><strong>English:</strong> Advanced</li>
         </ul>
       </section>
 
       <!-- RODAPÉ GERAL -->
       <div class="footer">
-        <p id="text-footer">© 2025 - CV of Lucas Viana Munhoz | Updated version for European opportunities</p>
+        <p id="text-footer">© 2025 - CV of Lucas Viana Munhoz </p>
       </div>
     </main>
   </div>
@@ -502,28 +534,29 @@
         "text-emailLabel": "Email:",
         "text-summaryTitle": "Professional Summary",
         "text-summaryContent":
-          "Highly skilled .NET Senior Developer with extensive experience in designing, "+
-          "developing, and maintaining web and desktop applications. Well-versed in "+
-          ".NET Core, microservices, modern front-end frameworks (Angular, React, Vue.js), "+
-          "and Agile methodologies (Scrum/Kanban). Skilled in cloud computing (Azure, AWS, "+
-          "GCP) and relational/non-relational databases. Adept at mentoring junior developers "+
-          "and managing complex project demands. Interested in opportunities to leverage "+
-          "expertise in Europe.",
+        "Highly skilled .NET Senior Developer with extensive experience in designing, "+
+        "developing, and maintaining web and desktop applications. Well-versed in "+
+        ".NET Core, microservices, modern front-end frameworks (Angular, React, Vue.js), "+
+        "and Agile methodologies (Scrum/Kanban). Skilled in cloud computing (Azure, AWS, "+
+        "GCP) and relational/non-relational databases. Adept at mentoring junior developers "+
+        "and managing complex project demands. Interested in opportunities to leverage "+
+        "expertise in Europe.",
         "text-keySkillsTitle": "Key Skills",
-        "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, C#",
-        "text-skill2": "Front-End: Angular, React, Vue.js, HTML5, CSS, JS, TS",
+        "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, WPF, C#",
+        "text-skill2": "Front-End: Angular, React, Vue.js, HTML5, CSS, JavaScript, TypeScript",
         "text-skill3": "Data Persistence: Entity Framework, Dapper",
         "text-skill4": "Databases: SQL Server, Oracle, MySQL, MongoDB",
         "text-skill5": "DevOps & Cloud: Azure, AWS, GCP, Git",
         "text-skill6": "Methodologies: Scrum, Kanban",
+        "text-skill7": "Node.js: Express, REST APIs, Microservices",
         "text-experienceTitle": "Professional Experience",
         "text-educationTitle": "Education",
         "text-languagesTitle": "Languages",
-        "text-footer": "© 2025 - CV of Lucas Viana Munhoz | Updated version for European opportunities",
+        "text-footer": "© 2025 - CV of Lucas Viana Munhoz",
 
         // Allianz
         "text-allianzMeta": "Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil",
-        "text-allianz1": "Maintained and enhanced ASP.NET Core systems.",
+        "text-allianz1": "  Maintained and enhanced ASP.NET Core systems, as well as <strong>WPF</strong> applications, implementing new functionalities and bug fixes.",
         "text-allianz2": "Developed new systems using Angular (v12).",
         "text-allianz3": "Created and optimized new Azure Functions.",
         "text-allianz4": "Developed Logic Apps for workflow automation.",
@@ -537,7 +570,7 @@
 
         // Fiap
         "text-fiapMeta": "Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil",
-        "text-fiap1": "Maintained legacy ASP.NET MVC, Web API, and WPF applications.",
+        "text-fiap1": "Maintained legacy ASP.NET MVC, Web API, and <strong>WPF</strong> applications, focusing on refactoring, bug fixes, and UI updates in WPF.",
         "text-fiap2": "Developed new systems in ASP.NET MVC 5.",
         "text-fiap3": "Mentored junior developers and managed project demands.",
         "text-fiap4": "Gathered requirements for new applications.",
@@ -590,24 +623,24 @@
         "text-nextt2": "Developed a demand-control system using ASP.NET Web Forms.",
 
         // CRK
-        "text-crkDataRange": "Project Analyst Trainee | 10/01/2011 - 01/08/2013 | São Paulo, Brazil",
+        "text-crkDataRange": "Trainee | Admission: 01/10/2011 - Termination: 08/01/2013 | São Paulo, Brazil",
         "text-crkPosition": "Initial Position: Project Analyst Trainee",
         "text-crkTechStack": "Technologies: ASP.NET Web Forms, Windows Forms",
         "text-crkExpTitle": "ACQUIRED EXPERIENCE:",
-        "crk1": "Area of expertise: Project Management:",
-        "crk2": "Checking the Implementation Status Report of the systems.",
+        "crk1": "Area of Expertise: Project Management:",
+        "crk2": "Monitoring the implementation Status Report of the systems.",
         "crk3": "Writing meeting minutes.",
         "crk4": "Updating project schedules.",
-        "crk5": "Understanding the phases of project management (Initiation, Planning, Execution, Closure).",
-        "crk6": "Area of expertise: Functional Analysis:",
+        "crk5": "Knowledge of project management phases (Initiation, Planning, Execution, and Closure).",
+        "crk6": "Area of Expertise: Functional Analysis:",
         "crk7": "Creating Use Cases based on client requests.",
         "crk8": "Writing Test Evidence documentation.",
         "crk9": "Completed CPA-10 training – Banking Investments Certification.",
-        "crk10": "Area of expertise: Development:",
-        "crk11": "Participated in the development of financial market systems (C# and ASP.NET).",
-        "crk12": "Converted a system entirely from VB6 to ASP.NET.",
-        "crk13": "Created test cases based on functional requirements.",
-        "crk14": "Performed software testing based on test cases.",
+        "crk10": "Area of Expertise: Development:",
+        "crk11": "Participated in the development of financial market systems using C# and ASP.NET.",
+        "crk12": "Worked on converting a system entirely from VB6 to ASP.NET.",
+        "crk13": "Creating test cases based on functional requirements.",
+        "crk14": "Software testing based on test cases.",
         "crk15": "Developed and fixed SQL Server procedures."
       },
       pt: {
@@ -629,19 +662,20 @@
           ".NET Core, microsserviços e frameworks front-end modernos (Angular, React, Vue.js), "+
           "além de metodologias ágeis (Scrum/Kanban). Experiência em computação em nuvem "+
           "(Azure, AWS, GCP) e bancos de dados relacionais e não relacionais. Hábil em mentorar "+
-          "desenvolvedores juniores e gerenciar demandas de projetos complexos. Interessado em "+
-          "oportunidades para aplicar sua expertise na Europa.",
+          "desenvolvedores juniores e gerenciar demandas de projetos complexos",
         "text-keySkillsTitle": "Principais Competências",
-        "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, C#",
-        "text-skill2": "Front-End: Angular, React, Vue.js, HTML5, CSS, JS, TS",
+        // Skills
+        "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, WPF, C#",
+        "text-skill2": "Front-End: Angular, React, Vue.js, HTML5, CSS, JavaScript, TypeScript",
         "text-skill3": "Persistência de Dados: Entity Framework, Dapper",
         "text-skill4": "Bancos de Dados: SQL Server, Oracle, MySQL, MongoDB",
         "text-skill5": "DevOps & Nuvem: Azure, AWS, GCP, Git",
         "text-skill6": "Metodologias: Scrum, Kanban",
+        "text-skill7": "Node.js: Express, REST APIs, Microsserviços",
         "text-experienceTitle": "Experiência Profissional",
         "text-educationTitle": "Formação",
         "text-languagesTitle": "Idiomas",
-        "text-footer": "© 2025 - CV de Lucas Viana Munhoz | Versão atualizada para oportunidades na Europa",
+        "text-footer": "© 2025 - CV de Lucas Viana Munhoz ",
 
         // Allianz
         "text-allianzMeta": "Desenvolvedor .NET Sênior | 07/2020 - 09/2024 | São Paulo, Brasil",
@@ -659,7 +693,7 @@
 
         // Fiap
         "text-fiapMeta": "Desenvolvedor .NET Sênior | 10/2019 - 06/2020 | São Paulo, Brasil",
-        "text-fiap1": "Manteve aplicativos legados em ASP.NET MVC, Web API e WPF.",
+        "text-fiap1": "Manteve aplicações legadas em ASP.NET MVC, Web API e <strong>WPF</strong>, com foco em refatoração, correções de bugs e atualizações de interface em WPF.",
         "text-fiap2": "Desenvolveu novos sistemas em ASP.NET MVC 5.",
         "text-fiap3": "Mentorou desenvolvedores juniores e gerenciou demandas de projeto.",
         "text-fiap4": "Levantou requisitos para novas aplicações.",
@@ -712,24 +746,24 @@
         "text-nextt2": "Desenvolveu sistema de controle de demandas em ASP.NET Web Forms.",
 
         // CRK
-        "text-crkDataRange": "Trainee de Analista de Projetos | 10/01/2011 - 01/08/2013 | São Paulo, Brasil",
-        "text-crkPosition": "Cargo Inicial: Trainee de Analista de Projetos",
+        "text-crkDataRange": "Trainee | Admissão: 01/10/2011 - Término: 08/01/2013 | São Paulo, Brasil",
+        "text-crkPosition": "Posição Inicial: Trainee de Analista de Projetos",
         "text-crkTechStack": "Tecnologias: ASP.NET Web Forms, Windows Forms",
         "text-crkExpTitle": "EXPERIÊNCIA ADQUIRIDA:",
-        "crk1": "Área de atuação: Gestão de Projetos:",
-        "crk2": "Verificando Status Report da implantação dos sistemas.",
+        "crk1": "Área de Atuação: Gestão de Projetos:",
+        "crk2": "Monitorando o Status Report de implantação dos sistemas.",
         "crk3": "Elaboração de atas de reunião.",
-        "crk4": "Atualização de cronogramas.",
-        "crk5": "Conhecimentos nas fases de gerenciamento de projetos (Iniciação, Planejamento, Execução e Encerramento).",
-        "crk6": "Área de atuação: Análise Funcional:",
-        "crk7": "Elaboração de Caso de Uso através das solicitações do cliente.",
-        "crk8": "Elaboração da Evidência de Teste.",
-        "crk9": "Treinamento da CPA-10 – Certificação de Investimentos Bancários.",
-        "crk10": "Área de atuação: Desenvolvimento:",
-        "crk11": "Participei do desenvolvimento de sistemas voltados para o mercado financeiro, em C# e ASP.NET.",
-        "crk12": "Conversão de sistema integralmente de VB6 para ASP.NET.",
-        "crk13": "Elaboração de caso de teste, baseado nos requisitos funcionais.",
-        "crk14": "Testes de software baseado em caso de testes.",
+        "crk4": "Atualização de cronogramas de projeto.",
+        "crk5": "Conhecimentos das fases de gerenciamento de projetos (Iniciação, Planejamento, Execução e Encerramento).",
+        "crk6": "Área de Atuação: Análise Funcional:",
+        "crk7": "Criação de Casos de Uso baseados em solicitações de clientes.",
+        "crk8": "Elaboração de documentação de Evidência de Teste.",
+        "crk9": "Curso CPA-10 – Certificação de Investimentos Bancários concluído.",
+        "crk10": "Área de Atuação: Desenvolvimento:",
+        "crk11": "Participação no desenvolvimento de sistemas para o mercado financeiro utilizando C# e ASP.NET.",
+        "crk12": "Conversão de um sistema inteiro de VB6 para ASP.NET.",
+        "crk13": "Criação de casos de teste baseados em requisitos funcionais.",
+        "crk14": "Testes de software baseados em casos de teste.",
         "crk15": "Desenvolvimento e correção de procedures em SQL Server."
       }
     };
