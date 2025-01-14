@@ -251,6 +251,10 @@
       }
     }
 
+    .skills-summary-print {
+        display: none;
+    }
+
     /* APARÊNCIA NO PDF */
     @media print {
       /* Força fundo branco e texto escuro no PDF */
@@ -281,6 +285,10 @@
       /* Exibe o bloco de contato apenas no PDF */
       .contact-summary-print {
         display: block !important;
+      }  
+      .skills-summary-print {
+            display: block !important;
+            margin-bottom: 20px; /* se quiser espaçamento */
       }
     }
   </style>
@@ -365,6 +373,33 @@
         <p><strong id="text-emailLabel-print">Email:</strong> lucas100390@gmail.com</p>
       </section>
 
+      <section class="skills-summary-print">
+        <h2 id="print-keySkillsTitle">Key Skills</h2>
+        <ul id="print-keySkillsList">
+          <li id="text-skill1">
+            <strong>.NET &amp; Frameworks:</strong> ASP.NET Core, MVC, Web Forms, WCF, WPF, C#
+          </li>
+          <li id="text-skill2">
+            <strong>Front-End:</strong> Angular, React, Vue.js, HTML5, CSS, JS, TS
+          </li>
+          <li id="text-skill3">
+            <strong>Data Persistence:</strong> Entity Framework, Dapper
+          </li>
+          <li id="text-skill4">
+            <strong>Databases:</strong> SQL Server, Oracle, MySQL, MongoDB
+          </li>
+          <li id="text-skill5">
+            <strong>DevOps &amp; Cloud:</strong> Azure, AWS, GCP, Git
+          </li>
+          <li id="text-skill6">
+            <strong>Methodologies:</strong> Scrum, Kanban
+          </li>
+          <li id="text-skill7">
+            <strong>Node.js:</strong> Express, REST APIs, Microservices
+          </li>
+        </ul>
+      </section>
+
       <!-- Resumo Profissional (em inglês) -->
       <section class="main-section summary">
         <h2 id="text-summaryTitle">Professional Summary</h2>
@@ -386,7 +421,7 @@
         <div class="experience-card">
             <h3>Allianz</h3>
             <div class="experience-meta" id="text-allianzMeta">
-              Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil
+              Senior .NET Developer | 10/2021 - 09/2024 | São Paulo, Brazil
             </div>
             <ul>
               <li id="text-allianz1">
