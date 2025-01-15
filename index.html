@@ -10,6 +10,79 @@
     rel="stylesheet"
   />
   <style>
+    /* PORTFOLIO */
+    .portfolio {
+      margin-top: 40px;
+      text-align: center;
+    }
+    
+    .portfolio h2 {
+      font-size: 1.8rem;
+      color: #2b3a67;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    
+    .portfolio p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #666;
+    }
+    
+    .portfolio-filters {
+      margin-bottom: 20px;
+    }
+    
+    .filter-btn {
+      background: #2b3a67;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      margin: 0 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border-radius: 5px;
+    }
+    
+    .filter-btn.active {
+      background: #1e2b4a;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .portfolio-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      padding: 15px;
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    
+    .portfolio-item h3 {
+      font-size: 1.2rem;
+      color: #2b3a67;
+      margin-bottom: 10px;
+    }
+    
+    .portfolio-item p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
     /* RESET E FONTE */
     * {
       margin: 0;
@@ -417,51 +490,52 @@
       <section class="main-section">
         <h2 id="text-experienceTitle">Professional Experience</h2>
 
+        <!-- CWI Software -->
         <div class="experience-card">
-            <h3>CWI Software</h3>
-            <div class="experience-meta" id="text-cwiMeta">
-              .NET Developer | 10/2024 - 01/2025 | São Paulo, Brazil (Remote)
-            </div>
-            <ul>
-              <li id="text-cwi1">
-                I performed bug fixes and maintenance on the .NET Core API, as well as implementing 
-                preventive maintenance for the system’s Angular front-end.
-              </li>
-              <li id="text-cwi2">
-                Worked on developing new features for both the API and backend.
-              </li>
-              <li id="text-cwi3">
-                Maintained some legacy WPF systems and migrated a few APIs to Node.js.
-              </li>
-              <li id="text-cwi4">
-                Supported the front-end teams, actively contributing to new feature implementations.
-              </li>
-            </ul>
+          <h3>CWI Software</h3>
+          <div class="experience-meta" id="text-cwiMeta">
+            .NET Developer | 10/2024 - 01/2025 | São Paulo, Brazil (Remote)
           </div>
+          <ul>
+            <li id="text-cwi1">
+              I performed bug fixes and maintenance on the .NET Core API, as well as implementing 
+              preventive maintenance for the system’s Angular front-end.
+            </li>
+            <li id="text-cwi2">
+              Worked on developing new features for both the API and backend.
+            </li>
+            <li id="text-cwi3">
+              Maintained some legacy WPF systems and migrated a few APIs to Node.js.
+            </li>
+            <li id="text-cwi4">
+              Supported the front-end teams, actively contributing to new feature implementations.
+            </li>
+          </ul>
+        </div>
 
-        <!-- ALLIANZ (HTML base em inglês) -->
+        <!-- Allianz -->
         <div class="experience-card">
-            <h3>Allianz</h3>
-            <div class="experience-meta" id="text-allianzMeta">
-              Senior .NET Developer | 10/2021 - 09/2024 | São Paulo, Brazil
-            </div>
-            <ul>
-              <li id="text-allianz1">
-                Maintained and enhanced ASP.NET Core systems, as well as <strong>WPF</strong> applications, implementing new functionalities and bug fixes.
-              </li>
-              <li id="text-allianz2">
-                Developed new systems using Angular (v12).
-              </li>
-              <li id="text-allianz3">
-                Migrated some .NET APIs to Node.js, focusing on performance and scalability.
-              </li>
-              <li id="text-allianz4">
-                Created and optimized new Azure Functions, and developed Logic Apps for workflow automation.
-              </li>
-            </ul>
+          <h3>Allianz</h3>
+          <div class="experience-meta" id="text-allianzMeta">
+            Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil
           </div>
+          <ul>
+            <li id="text-allianz1">
+              Maintained and enhanced ASP.NET Core systems, as well as <strong>WPF</strong> applications, implementing new functionalities and bug fixes.
+            </li>
+            <li id="text-allianz2">
+              Developed new systems using Angular (v12).
+            </li>
+            <li id="text-allianz3">
+              Created and optimized new Azure Functions.
+            </li>
+            <li id="text-allianz4">
+              Developed Logic Apps for workflow automation.
+            </li>
+          </ul>
+        </div>
 
-        <!-- AVIVATECH -->
+        <!-- Avivatech -->
         <div class="experience-card">
           <h3>Avivatech</h3>
           <div class="experience-meta" id="text-avivatechMeta">
@@ -475,30 +549,30 @@
           </ul>
         </div>
 
-        <!-- FIAP -->
+        <!-- Fiap -->
         <div class="experience-card">
-            <h3>Fiap</h3>
-            <div class="experience-meta" id="text-fiapMeta">
-              Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil
-            </div>
-            <ul>
-              <li id="text-fiap1">
-                Maintained legacy ASP.NET MVC, Web API, and <strong>WPF</strong> applications, 
-                focusing on refactoring, bug fixes, and UI updates in WPF.
-              </li>
-              <li id="text-fiap2">
-                Developed new systems in ASP.NET MVC 5.
-              </li>
-              <li id="text-fiap3">
-                Mentored junior developers and managed project demands.
-              </li>
-              <li id="text-fiap4">
-                Gathered requirements for new applications.
-              </li>
-            </ul>
+          <h3>Fiap</h3>
+          <div class="experience-meta" id="text-fiapMeta">
+            Senior .NET Developer | 10/2019 - 06/2020 | São Paulo, Brazil
           </div>
+          <ul>
+            <li id="text-fiap1">
+              Maintained legacy ASP.NET MVC, Web API, and <strong>WPF</strong> applications, 
+              focusing on refactoring, bug fixes, and UI updates in WPF.
+            </li>
+            <li id="text-fiap2">
+              Developed new systems in ASP.NET MVC 5.
+            </li>
+            <li id="text-fiap3">
+              Mentored junior developers and managed project demands.
+            </li>
+            <li id="text-fiap4">
+              Gathered requirements for new applications.
+            </li>
+          </ul>
+        </div>
 
-        <!-- PINBANK -->
+        <!-- Pinbank Brasil -->
         <div class="experience-card">
           <h3>Pinbank Brasil</h3>
           <div class="experience-meta" id="text-pinbankMeta">
@@ -511,41 +585,129 @@
           </ul>
         </div>
 
-        <!-- ... (demais experiências, todas em inglês no HTML base) ... -->
-
-        <!-- CRK INFORMÁTICA -->
+        <!-- Ness Processos de Tecnologia -->
         <div class="experience-card">
-            <h3>CRK INFORMATICA LTDA</h3>
-            <div class="experience-meta" id="text-crkDataRange">
-               Trainee | Admission: 01/10/2011 - Termination: 08/01/2013 | São Paulo, Brazil
-            </div>
-            <p>
-              <strong id="text-crkPosition">Initial Position: Project Analyst Trainee</strong>
-            </p>
-            <p id="text-crkTechStack" >
-              <strong>Technologies:</strong> ASP.NET Web Forms, Windows Forms
-            </p>
-            <p style="margin-top:10px; font-weight:600;" id="text-crkExpTitle">
-              ACQUIRED EXPERIENCE:
-            </p>
-            <ul id="text-crkResponsibilities">
-              <li styles="font-weight:bolder;"><strong>Area of Expertise: Project Management:</strong></li>
-              <li>Monitoring the implementation Status Report of the systems.</li>
-              <li>Writing meeting minutes.</li>
-              <li>Updating project schedules.</li>
-              <li>Knowledge of project management phases (Initiation, Planning, Execution, and Closure).</li>
-              <li styles="font-weight:bolder;"><strong>Area of Expertise: Functional Analysis:</strong></li>
-              <li>Creating Use Cases based on client requests.</li>
-              <li>Writing Test Evidence documentation.</li>
-              <li>Completed CPA-10 training – Banking Investments Certification.</li>
-              <li styles="font-weight:bolder;"><strong>Area of Expertise: Development:</strong></li>
-              <li>Participated in the development of financial market systems using C# and ASP.NET.</li>
-              <li>Worked on converting a system entirely from VB6 to ASP.NET.</li>
-              <li>Creating test cases based on functional requirements.</li>
-              <li>Software testing based on test cases.</li>
-              <li>Developed and fixed SQL Server procedures.</li>
-            </ul>
+          <h3>Ness Processos de Tecnologia</h3>
+          <div class="experience-meta" id="text-nessMeta">
+            Mid-Level .NET Developer | 07/2017 - 08/2018 | São Paulo, Brazil
           </div>
+          <ul>
+            <li id="text-ness1">Developed systems for healthcare (Fidi, Alliar) and education (Enem, Encceja).</li>
+            <li id="text-ness2">Created services to optimize tasks.</li>
+            <li id="text-ness3">Worked with Angular 9, React Native, ASP.NET MVC, and DDD patterns.</li>
+          </ul>
+        </div>
+
+        <!-- Kraft Consulting -->
+        <div class="experience-card">
+          <h3>Kraft Consulting</h3>
+          <div class="experience-meta" id="text-kraftMeta">
+            Senior .NET Developer | 11/2016 - 07/2017 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-kraft1">Developed Cinemark media management platform (ASP.NET MVC).</li>
+            <li id="text-kraft2">Gathered requirements with clients for new demands.</li>
+            <li id="text-kraft3">Created WCF services and relevant documentation.</li>
+          </ul>
+        </div>
+
+        <!-- Atacado.com -->
+        <div class="experience-card">
+          <h3>Atacado.com</h3>
+          <div class="experience-meta" id="text-atacadoMeta">
+            Senior .NET Developer | 04/2016 - 11/2016 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-atacado1">Maintained and enhanced e-commerce platform.</li>
+            <li id="text-atacado2">Integrated MOIP payment API.</li>
+            <li id="text-atacado3">Developed services for daily database updates.</li>
+          </ul>
+        </div>
+
+        <!-- Capgemini Brasil -->
+        <div class="experience-card">
+          <h3>Capgemini Brasil (Allocated at Corpo de Bombeiros)</h3>
+          <div class="experience-meta" id="text-capgeminiMeta">
+            Senior .NET Developer | 01/2016 - 04/2016 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-capgemini1">Developed custom software for the Fire Department using ASP.NET MVC.</li>
+            <li id="text-capgemini2">Worked with CSS, JavaScript, jQuery for front-end interfaces.</li>
+            <li id="text-capgemini3">Implemented Domain-Driven Design and use-case driven development.</li>
+          </ul>
+        </div>
+
+        <!-- SA365 -->
+        <div class="experience-card">
+          <h3>SA365</h3>
+          <div class="experience-meta" id="text-sa365Meta">
+            Development Intern | 08/2015 - 01/2016 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-sa3651">Created new websites using ASP.NET MVC.</li>
+            <li id="text-sa3652">Maintained sites built in PHP and Ruby.</li>
+            <li id="text-sa3653">Updated C# web content.</li>
+          </ul>
+        </div>
+
+        <!-- Imagem Companhia -->
+        <div class="experience-card">
+          <h3>Imagem Companhia</h3>
+          <div class="experience-meta" id="text-imagemMeta">
+            Mid-Level Web Developer | 07/2014 - 07/2015 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-imagem1">Created newsletters and new websites using ASP.NET MVC.</li>
+            <li id="text-imagem2">Modified web content in C#.</li>
+            <li id="text-imagem3">Maintained legacy ASP code.</li>
+          </ul>
+        </div>
+
+        <!-- Nextt Informática -->
+        <div class="experience-card">
+          <h3>Nextt Informática</h3>
+          <div class="experience-meta" id="text-nexttMeta">
+            Development Intern | 12/2013 - 07/2014 | São Paulo, Brazil
+          </div>
+          <ul>
+            <li id="text-nextt1">Fixed bugs in existing systems.</li>
+            <li id="text-nextt2">Developed a demand-control system using ASP.NET Web Forms.</li>
+          </ul>
+        </div>
+
+ <!-- CRK INFORMÁTICA -->
+<div class="experience-card">
+    <h3>CRK INFORMATICA LTDA</h3>
+    <div class="experience-meta" id="text-crkDataRange">
+       Trainee | Admission: 01/10/2011 - Termination: 08/01/2013 | São Paulo, Brazil
+    </div>
+    <p>
+      <strong id="text-crkPosition">Initial Position: Project Analyst Trainee</strong>
+    </p>
+    <p id="text-crkTechStack" >
+      <strong>Technologies:</strong> ASP.NET Web Forms, Windows Forms
+    </p>
+    <p style="margin-top:10px; font-weight:600;" id="text-crkExpTitle">
+      ACQUIRED EXPERIENCE:
+    </p>
+    <ul id="text-crkResponsibilities">
+      <li id="crk1" style="font-weight:bold;"><strong>Area of Expertise: Project Management:</strong></li>
+      <li id="crk2">Monitoring the implementation Status Report of the systems.</li>
+      <li id="crk3">Writing meeting minutes.</li>
+      <li id="crk4">Updating project schedules.</li>
+      <li id="crk5">Knowledge of project management phases (Initiation, Planning, Execution, and Closure).</li>
+      <li id="crk6" style="font-weight:bold;"><strong>Area of Expertise: Functional Analysis:</strong></li>
+      <li id="crk7">Creating Use Cases based on client requests.</li>
+      <li id="crk8">Writing Test Evidence documentation.</li>
+      <li id="crk9">Completed CPA-10 training – Banking Investments Certification.</li>
+      <li id="crk10" style="font-weight:bold;"><strong>Area of Expertise: Development:</strong></li>
+      <li id="crk11">Participated in the development of financial market systems using C# and ASP.NET.</li>
+      <li id="crk12">Worked on converting a system entirely from VB6 to ASP.NET.</li>
+      <li id="crk13">Creating test cases based on functional requirements.</li>
+      <li id="crk14">Software testing based on test cases.</li>
+      <li id="crk15">Developed and fixed SQL Server procedures.</li>
+    </ul>
+</div>
       </section>
 
       <!-- EDUCAÇÃO (EM INGLÊS) -->
@@ -564,6 +726,52 @@
           <li><strong>Portuguese:</strong> Native</li>
           <li><strong>English:</strong> Advanced</li>
         </ul>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="main-section portfolio">
+        <h2 id="portfolio-title">Portfolio</h2>
+        <p id="portfolio-description">
+          Welcome to my portfolio! Below, you will find some of the projects I’ve worked on, showcasing my experience in .NET, Angular, and other technologies.
+        </p>
+
+        <!-- Filtros de categorias -->
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web App</button>
+          <button class="filter-btn" data-filter="mobile">Mobile App</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+        </div>
+
+        <!-- Projetos -->
+        <div class="portfolio-grid">
+          <!-- Projeto 1 -->
+          <div class="portfolio-item" data-category="web">
+            <img src="project1.jpg" alt="Project 1" />
+            <h3>Project Heading</h3>
+            <p>Developed using Angular and ASP.NET Core.</p>
+            <p><strong>Client:</strong> Google</p>
+          </div>
+
+          <!-- Projeto 2 -->
+          <div class="portfolio-item" data-category="backend">
+            <img src="project2.jpg" alt="Project 2" />
+            <h3>Project Heading</h3>
+            <p>Implemented scalable APIs with Node.js and SQL Server.</p>
+            <p><strong>Client:</strong> Dropbox</p>
+          </div>
+
+          <!-- Projeto 3 -->
+          <div class="portfolio-item" data-category="frontend">
+            <img src="project3.jpg" alt="Project 3" />
+            <h3>Project Heading</h3>
+            <p>Redesigned user interfaces using React and Vue.js.</p>
+            <p><strong>Client:</strong> Startup Hub</p>
+          </div>
+
+          <!-- Adicione mais projetos conforme necessário -->
+        </div>
       </section>
 
       <!-- RODAPÉ GERAL -->
@@ -613,7 +821,7 @@
 
         // Allianz
         "text-allianzMeta": "Senior .NET Developer | 07/2020 - 09/2024 | São Paulo, Brazil",
-        "text-allianz1": "  Maintained and enhanced ASP.NET Core systems, as well as <strong>WPF</strong> applications, implementing new functionalities and bug fixes.",
+        "text-allianz1": "Maintained and enhanced ASP.NET Core systems, as well as <strong>WPF</strong> applications, implementing new functionalities and bug fixes.",
         "text-allianz2": "Developed new systems using Angular (v12).",
         "text-allianz3": "Created and optimized new Azure Functions.",
         "text-allianz4": "Developed Logic Apps for workflow automation.",
@@ -678,27 +886,25 @@
         "text-nexttMeta": "Development Intern | 12/2013 - 07/2014 | São Paulo, Brazil",
         "text-nextt1": "Fixed bugs in existing systems.",
         "text-nextt2": "Developed a demand-control system using ASP.NET Web Forms.",
-
-        // CRK
-        "text-crkDataRange": "Trainee | Admission: 01/10/2011 - Termination: 08/01/2013 | São Paulo, Brazil",
-        "text-crkPosition": "Initial Position: Project Analyst Trainee",
-        "text-crkTechStack": "Technologies: ASP.NET Web Forms, Windows Forms",
-        "text-crkExpTitle": "ACQUIRED EXPERIENCE:",
-        "crk1": "Area of Expertise: Project Management:",
-        "crk2": "Monitoring the implementation Status Report of the systems.",
-        "crk3": "Writing meeting minutes.",
-        "crk4": "Updating project schedules.",
-        "crk5": "Knowledge of project management phases (Initiation, Planning, Execution, and Closure).",
-        "crk6": "Area of Expertise: Functional Analysis:",
-        "crk7": "Creating Use Cases based on client requests.",
-        "crk8": "Writing Test Evidence documentation.",
-        "crk9": "Completed CPA-10 training – Banking Investments Certification.",
-        "crk10": "Area of Expertise: Development:",
-        "crk11": "Participated in the development of financial market systems using C# and ASP.NET.",
-        "crk12": "Worked on converting a system entirely from VB6 to ASP.NET.",
-        "crk13": "Creating test cases based on functional requirements.",
-        "crk14": "Software testing based on test cases.",
-        "crk15": "Developed and fixed SQL Server procedures.",
+     "text-crkDataRange": "Trainee | Admission: 01/10/2011 - Termination: 08/01/2013 | São Paulo, Brazil",
+    "text-crkPosition": "Initial Position: Project Analyst Trainee",
+    "text-crkTechStack": "Technologies: ASP.NET Web Forms, Windows Forms",
+    "text-crkExpTitle": "ACQUIRED EXPERIENCE:",
+    "crk1": "Area of Expertise: Project Management:",
+    "crk2": "Monitoring the implementation Status Report of the systems.",
+    "crk3": "Writing meeting minutes.",
+    "crk4": "Updating project schedules.",
+    "crk5": "Knowledge of project management phases (Initiation, Planning, Execution, and Closure).",
+    "crk6": "Area of Expertise: Functional Analysis:",
+    "crk7": "Creating Use Cases based on client requests.",
+    "crk8": "Writing Test Evidence documentation.",
+    "crk9": "Completed CPA-10 training – Banking Investments Certification.",
+    "crk10": "Area of Expertise: Development:",
+    "crk11": "Participated in the development of financial market systems using C# and ASP.NET.",
+    "crk12": "Worked on converting a system entirely from VB6 to ASP.NET.",
+    "crk13": "Creating test cases based on functional requirements.",
+    "crk14": "Software testing based on test cases.",
+    "crk15": "Developed and fixed SQL Server procedures.",
         "text-cwiMeta": ".NET Developer | 10/2024 - 01/2025 | São Paulo, Brazil (Remote)",
         "text-cwi1": "I performed bug fixes and maintenance on the .NET Core API, as well as implementing preventive maintenance for the system’s Angular front-end.",
         "text-cwi2": "Worked on developing new features for both the API and backend.",
@@ -724,7 +930,7 @@
           ".NET Core, microsserviços e frameworks front-end modernos (Angular, React, Vue.js), "+
           "além de metodologias ágeis (Scrum/Kanban). Experiência em computação em nuvem "+
           "(Azure, AWS, GCP) e bancos de dados relacionais e não relacionais. Hábil em mentorar "+
-          "desenvolvedores juniores e gerenciar demandas de projetos complexos",
+          "desenvolvedores juniores e gerenciar demandas de projetos complexos.",
         "text-keySkillsTitle": "Principais Competências",
         // Skills
         "text-skill1": ".NET & Frameworks: ASP.NET Core, MVC, Web Forms, WCF, WPF, C#",
@@ -741,7 +947,7 @@
 
         // Allianz
         "text-allianzMeta": "Desenvolvedor .NET Sênior | 07/2020 - 09/2024 | São Paulo, Brasil",
-        "text-allianz1": "Realizou manutenção e aprimoramentos em sistemas ASP.NET Core.",
+        "text-allianz1": "Realizou manutenção e aprimoramentos em sistemas ASP.NET Core, além de aplicações <strong>WPF</strong>, implementando novas funcionalidades e correções de bugs.",
         "text-allianz2": "Desenvolveu novos sistemas utilizando Angular (v12).",
         "text-allianz3": "Criou e otimizou novas Azure Functions.",
         "text-allianz4": "Desenvolveu Logic Apps para automação de fluxos de trabalho.",
@@ -832,8 +1038,6 @@
         "text-cwi2": "Trabalhei no desenvolvimento de novas funcionalidades para a API e o backend.",
         "text-cwi3": "Dei manutenção em alguns sistemas legados em WPF e migrei algumas APIs para Node.js.",
         "text-cwi4": "Prestei suporte às equipes de front-end, contribuindo ativamente para a implementação de novas funcionalidades."
-
-
       }
     };
 
@@ -842,26 +1046,11 @@
       for (const key in translations[lang]) {
         const element = document.getElementById(key);
         if (element) {
-          element.textContent = translations[lang][key];
+          element.innerHTML = translations[lang][key];
         }
       }
 
- 
-      const crkItems = [
-        "crk1","crk2","crk3","crk4","crk5","crk6","crk7","crk8","crk9","crk10",
-        "crk11","crk12","crk13","crk14","crk15"
-      ];
-      const crkUl = document.getElementById("text-crkResponsibilities");
-      if (crkUl) {
-        const liElements = crkUl.querySelectorAll("li");
-        liElements.forEach((li, index) => {
-          if (index < crkItems.length) {
-            li.textContent = translations[lang][crkItems[index]];
-          }
-        });
-      }
-
-      // 3) Sincronizar dados de contato no PDF
+      // 2) Sincronizar dados de contato no PDF
       const locationPrint = document.getElementById("text-location-print");
       const phoneLabelPrint = document.getElementById("text-phoneLabel-print");
       const emailLabelPrint = document.getElementById("text-emailLabel-print");
@@ -876,11 +1065,34 @@
       }
     }
 
- 
     document.getElementById("langSwitcher").addEventListener("change", function () {
       switchLanguage(this.value);
     });
- 
+
+    // Inicializa o idioma padrão
+    switchLanguage('en');
+  </script>
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove classe "active" de todos os botões
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        portfolioItems.forEach((item) => {
+          if (filter === "all" || item.getAttribute("data-category") === filter) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
